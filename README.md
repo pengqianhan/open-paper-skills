@@ -7,6 +7,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 | Skill | Description | Source |
 |-------|-------------|--------|
 | [`ml-paper-writing`](#ml-paper-writing) | Write publication-ready ML/AI papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) |
+| [`pyzotero`](#pyzotero) | Programmatically manage Zotero libraries: retrieve, create, update items, export BibTeX | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) |
 | [`drawio`](#drawio) | Generate and export draw.io diagrams as `.drawio`, PNG, SVG, or PDF | [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) |
 
 ---
@@ -18,6 +19,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 - [Claude Code](https://claude.ai/code) (CLI)
 - For `drawio` exports: [draw.io desktop app](https://github.com/jgraph/drawio-desktop/releases)
 - For `ml-paper-writing`: LaTeX distribution ([TeX Live](https://tug.org/texlive/) recommended) and optional Python packages (`semanticscholar`, `arxiv`, `habanero`, `requests`)
+- For `pyzotero`: `pyzotero` Python package (`uv add pyzotero`) and a [Zotero API key](https://www.zotero.org/settings/keys)
 
 ### Installation
 
@@ -96,6 +98,45 @@ AI-generated citations have a ~40% error rate. This skill enforces a strict work
 
 ---
 
+## pyzotero
+
+> Programmatically interact with your Zotero reference library.
+
+### What It Does
+
+- **Read and search** your Zotero library items, collections, and tags
+- **Create and update** bibliographic references from templates
+- **Export citations** as BibTeX, CSL-JSON, or formatted bibliographies
+- **Upload attachments** and manage PDF files linked to items
+- **Automate research workflows** — sync references, batch-tag, or build custom pipelines
+
+### Setup
+
+Get your credentials from [zotero.org/settings/keys](https://www.zotero.org/settings/keys) and store them as environment variables:
+
+```bash
+export ZOTERO_LIBRARY_ID=your_user_id
+export ZOTERO_API_KEY=your_api_key
+export ZOTERO_LIBRARY_TYPE=user   # or "group"
+```
+
+Install the Python client:
+
+```bash
+uv add pyzotero
+```
+
+### Usage
+
+```
+/pyzotero search my library for papers on transformers
+/pyzotero export all items in the "NeurIPS 2025" collection as BibTeX
+/pyzotero add a new journal article entry for this paper
+/pyzotero upload this PDF as an attachment to item ABC123
+```
+
+---
+
 ## drawio
 
 > Generate native draw.io diagrams and export to PNG, SVG, or PDF.
@@ -154,6 +195,9 @@ The draw.io desktop app must be installed for export (PNG/SVG/PDF). The skill au
     │       ├── checklists.md         # NeurIPS / ICML / ICLR / ACL checklists
     │       ├── reviewer-guidelines.md
     │       └── sources.md
+    ├── pyzotero/
+    │   ├── SKILL.md                  # Skill definition
+    │   └── references/               # API docs (read, write, search, export…)
     └── drawio/
         └── SKILL.md                  # Skill definition
 ```
@@ -163,6 +207,7 @@ The draw.io desktop app must be installed for export (PNG/SVG/PDF). The skill au
 ## Credits
 
 - **ml-paper-writing** skill: [Orchestra Research / AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) — MIT License
+- **pyzotero** skill: [K-Dense-AI / claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — MIT License
 - **drawio** skill: [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp)
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 
