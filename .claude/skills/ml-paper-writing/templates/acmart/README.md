@@ -10,48 +10,50 @@ Official ACM LaTeX class for all ACM publications (CHI, SIGGRAPH, SIGCOMM, CSCW,
 
 | File | Purpose |
 |------|---------|
-| `acmart.dtx` | Source for generating `acmart.cls` |
-| `acmart.ins` | Installation script |
+| `acmart.cls` | Main class file (v2.14, copied from TeX Live 2025) |
 | `ACM-Reference-Format.bst` | Bibliography style |
-| `samples.dtx` | Source for generating sample `.tex` files |
-| `samples.ins` | Sample files installation script |
-| `sample-base.bib` | Example bibliography |
+| `sample-sigconf.tex` | Conference template (CHI, KDD, MM, SIGCOMM) |
+| `sample-manuscript.tex` | General manuscript / preprint format |
+| `sample-acmtog.tex` | ACM Transactions on Graphics (SIGGRAPH) |
+| `sample-acmsmall.tex` | Small single-column journals |
+| `sample-base.bib` | Main example bibliography |
+| `abbrev.bib` | ACM journal abbreviations |
+| `software.bib` | Software citation examples |
+| `sampleteaser.pdf` | Sample teaser figure (used by sample .tex) |
+| `sample-franklin.png` | Sample photo (used by sample .tex) |
+| `acmart.dtx` + `acmart.ins` | CTAN source (for reference / regeneration) |
+| `samples.dtx` + `samples.ins` | CTAN sample source (for reference) |
 
 ---
 
-## Getting `acmart.cls`
+## Ready to Use
 
-The `acmart.cls` class file is **not pre-compiled** in the CTAN distribution. Obtain it via one of these methods:
-
-### Option 1: TeX Live (Recommended)
+This template is **ready to compile** — `acmart.cls` is included (copied from TeX Live 2025, v2.14).
 
 ```bash
-tlmgr install acmart
+# Compile a sample:
+pdflatex sample-sigconf.tex
+bibtex sample-sigconf
+pdflatex sample-sigconf.tex
+pdflatex sample-sigconf.tex
 ```
 
-Once installed, `acmart.cls` is available system-wide. No local copy needed — just use `\documentclass{acmart}` in your `.tex` file.
+### Updating `acmart.cls` in the Future
 
-### Option 2: Generate from Source
+If you need to update to a newer version:
 
 ```bash
-# In this directory:
+# Option A: Replace from your TeX Live installation
+kpsewhich acmart.cls   # find the path
+cp <path> ./acmart.cls
+
+# Option B: Regenerate from source
 latex acmart.ins
 ```
 
-This generates `acmart.cls` in the current directory.
+### Using on Overleaf
 
-### Option 3: Generate Sample Files
-
-```bash
-# Generate sample .tex files from samples.dtx:
-latex samples.ins
-```
-
-This generates: `sample-manuscript.tex`, `sample-sigconf.tex`, `sample-acmtog.tex`, `sample-acmsmall.tex`, etc.
-
-### Option 4: Overleaf
-
-On Overleaf, `acmart.cls` is pre-installed. Upload only your `.tex` and `.bib` files.
+Upload the entire directory as a ZIP. `acmart.cls` is also pre-installed on Overleaf.
 
 ---
 

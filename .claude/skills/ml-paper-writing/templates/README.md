@@ -123,7 +123,7 @@ tlmgr install <package-name>
 | IEEE IEEEtran | `ieeetran/` | IEEE Transactions (TPAMI, TNNLS, TIP), IEEE conferences (WACV, ICASSP) | [CTAN IEEEtran](https://ctan.org/pkg/IEEEtran) |
 | ACM acmart | `acmart/` | CHI, SIGGRAPH/TOG, SIGCOMM, CSCW, MM, KDD | [CTAN acmart](https://ctan.org/pkg/acmart) |
 
-> **Note on acmart**: `acmart.cls` must be generated from source or installed via `tlmgr install acmart`. See `acmart/README.md`.
+> **Note on acmart**: `acmart.cls` (v2.14) is included and ready to use. Copied from TeX Live 2025.
 
 ## Usage
 
