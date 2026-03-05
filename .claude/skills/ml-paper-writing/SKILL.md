@@ -607,6 +607,10 @@ Only remove template artifacts when paper is nearly complete:
 | ACL | `acl_latex.tex` | `acl.sty` | Strict formatting |
 | AAAI 2026 | `aaai2026-unified-template.tex` | `aaai2026.sty` | Very strict compliance |
 | COLM 2025 | `colm2025_conference.tex` | `colm2025_conference.sty` | Similar to ICLR |
+| IEEE (journals) | `bare_jrnl.tex` | `IEEEtran.cls` | TPAMI, TNNLS, TIP, Access |
+| IEEE (CS conf) | `bare_conf_compsoc.tex` | `IEEEtran.cls` | WACV, ICASSP; mode: `\documentclass[compsoc,conference]{IEEEtran}` |
+| ACM (conf) | generate from `samples.ins` | `acmart.cls` | CHI, MM, KDD; `\documentclass[sigconf]{acmart}` |
+| ACM (journal) | generate from `samples.ins` | `acmart.cls` | SIGGRAPH/TOG; `\documentclass[acmtog]{acmart}` |
 
 ---
 
@@ -913,7 +917,7 @@ Baseline & 85.2 & 45ms \\
 
 ### LaTeX Templates
 
-Templates in `templates/` directory: **ICML 2026**, **ICLR 2026**, **NeurIPS 2025**, **ACL/EMNLP**, **AAAI 2026**, **COLM 2025**.
+Templates in `templates/` directory: **ICML 2026**, **ICLR 2026**, **NeurIPS 2025**, **ACL/EMNLP**, **AAAI 2026**, **COLM 2025**, **IEEE IEEEtran** (TPAMI/TNNLS/TIP journals + conferences), **ACM acmart** (CHI/SIGGRAPH/SIGCOMM/CSCW).
 
 **Compiling to PDF:**
 - **VS Code/Cursor**: Install LaTeX Workshop extension + TeX Live → Save to auto-compile

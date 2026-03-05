@@ -105,6 +105,8 @@ tlmgr install <package-name>
 
 ## Available Templates
 
+### ML/AI Conferences
+
 | Conference | Directory | Year | Source |
 |------------|-----------|------|--------|
 | ICML | `icml2026/` | 2026 | [Official ICML](https://icml.cc/Conferences/2026/AuthorInstructions) |
@@ -113,6 +115,15 @@ tlmgr install <package-name>
 | ACL | `acl/` | 2025+ | [Official ACL](https://github.com/acl-org/acl-style-files) |
 | AAAI | `aaai2026/` | 2026 | [AAAI Author Kit](https://aaai.org/authorkit26/) |
 | COLM | `colm2025/` | 2025 | [Official COLM](https://github.com/COLM-org/Template) |
+
+### IEEE & ACM Journals/Conferences
+
+| Publisher | Directory | Covers | Source |
+|-----------|-----------|--------|--------|
+| IEEE IEEEtran | `ieeetran/` | IEEE Transactions (TPAMI, TNNLS, TIP), IEEE conferences (WACV, ICASSP) | [CTAN IEEEtran](https://ctan.org/pkg/IEEEtran) |
+| ACM acmart | `acmart/` | CHI, SIGGRAPH/TOG, SIGCOMM, CSCW, MM, KDD | [CTAN acmart](https://ctan.org/pkg/acmart) |
+
+> **Note on acmart**: `acmart.cls` must be generated from source or installed via `tlmgr install acmart`. See `acmart/README.md`.
 
 ## Usage
 
