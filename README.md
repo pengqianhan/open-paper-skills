@@ -51,20 +51,31 @@ The skills are automatically detected by Claude Code from the `.claude/skills/` 
 
 - **Drafts complete papers** from your research repository — methods, experiments, related work, and all
 - **Enforces citation integrity**: never hallucinates references; always fetches BibTeX programmatically via DOI
-- **Provides LaTeX templates** for all major venues (ICML 2026, ICLR 2026, NeurIPS 2025, ACL, AAAI 2026, COLM 2025)
+- **Provides LaTeX templates** for all major venues (ICML 2026, ICLR 2026, NeurIPS 2025, ACL, AAAI 2026, COLM 2025, IEEE IEEEtran, ACM acmart)
 - **Guides conference resubmissions**: page-limit adjustments, venue-specific requirements, blind-review compliance
 - **Applies writing philosophy** from leading ML researchers (Neel Nanda, Sebastian Farquhar, Andrej Karpathy, Zachary Lipton, Jacob Steinhardt)
 
 ### Supported Venues
+
+#### ML/AI Conferences
 
 | Conference | Page Limit | Key Requirement |
 |------------|------------|-----------------|
 | NeurIPS 2025 | 9 pages | Mandatory checklist |
 | ICML 2026 | 8 pages | Broader Impact Statement |
 | ICLR 2026 | 9 pages | LLM disclosure required |
-| ACL | 8 pages | Limitations section mandatory |
+| ACL / EMNLP / NAACL | 8 pages | Limitations section mandatory |
 | AAAI 2026 | 7 pages | Strict style file adherence |
 | COLM 2025 | 9 pages | Language model focus |
+
+#### IEEE & ACM Journals / Conferences
+
+| Venue | Template | Covers |
+|-------|----------|--------|
+| IEEE Transactions (TPAMI, TNNLS, TIP) | `ieeetran/bare_jrnl.tex` | Journals, no fixed page limit |
+| IEEE CS Conferences (WACV, ICASSP) | `ieeetran/bare_conf_compsoc.tex` | Typically 8 pages |
+| ACM CHI, KDD, MM, SIGCOMM | `acmart/sample-sigconf.tex` | 8–12 pages + refs |
+| ACM SIGGRAPH / TOG | `acmart/sample-acmtog.tex` | No fixed limit |
 
 ### Usage
 
@@ -91,9 +102,11 @@ AI-generated citations have a ~40% error rate. This skill enforces a strict work
 ├── neurips2025/      # NeurIPS 2025
 ├── icml2026/         # ICML 2026
 ├── iclr2026/         # ICLR 2026
-├── acl/              # ACL / EMNLP
+├── acl/              # ACL / EMNLP / NAACL
 ├── aaai2026/         # AAAI 2026
-└── colm2025/         # COLM 2025
+├── colm2025/         # COLM 2025
+├── ieeetran/         # IEEE Transactions & Conferences (IEEEtran v1.8b)
+└── acmart/           # ACM Publications — CHI, SIGGRAPH, KDD, MM… (acmart v2.14)
 ```
 
 ---
@@ -188,7 +201,9 @@ The draw.io desktop app must be installed for export (PNG/SVG/PDF). The skill au
     │   │   ├── iclr2026/
     │   │   ├── acl/
     │   │   ├── aaai2026/
-    │   │   └── colm2025/
+    │   │   ├── colm2025/
+    │   │   ├── ieeetran/             # IEEE (IEEEtran v1.8b)
+    │   │   └── acmart/               # ACM (acmart v2.14)
     │   └── references/
     │       ├── writing-guide.md      # Gopen & Swan, Perez micro-tips
     │       ├── citation-workflow.md  # Citation API docs and Python code
