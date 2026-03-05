@@ -183,6 +183,8 @@ Use this skill when:
 - **Resubmitting** to a different venue (format conversion)
 - **Iterating** on drafts with scientist feedback
 
+**Do NOT use this skill** when the user needs a **Word (.docx) template**. All venues covered here (NeurIPS, ICML, ICLR, ACL, AAAI, COLM) are LaTeX-only. For IEEE/ACM venues that accept Word, redirect to the `document-skills:docx` skill instead.
+
 **Always remember**: First drafts are starting points for discussion, not final outputs.
 
 ---
