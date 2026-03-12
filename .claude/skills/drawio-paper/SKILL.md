@@ -13,20 +13,14 @@ Generate publication-quality academic paper visualizations using a structured mu
 
 ## Setup (run once before first use)
 
-Before generating diagrams or plots, ensure the PaperBananaBench reference dataset is available locally. **Check if `{skill_dir}/PaperBananaBench` exists.** If it does NOT exist, run the following setup steps:
+Before generating diagrams or plots, ensure the PaperBananaBench reference dataset is available locally. **Check if `{skill_dir}/PaperBananaBench/diagram/ref.json` and `{skill_dir}/PaperBananaBench/plot/ref.json` both exist.** If either is missing, run the following setup steps:
 
 ```bash
-# 1. Navigate to the skill directory
-cd {skill_dir}
+# 1. Download PaperBananaBench.zip directly from Hugging Face
+curl -L -o "{skill_dir}/PaperBananaBench.zip" https://huggingface.co/datasets/dwzhu/PaperBananaBench/resolve/main/PaperBananaBench.zip
 
-# 2. Download PaperBananaBench.zip directly from Hugging Face
-curl -L -o PaperBananaBench.zip https://huggingface.co/datasets/dwzhu/PaperBananaBench/resolve/main/PaperBananaBench.zip
-
-# 3. Unzip the archive (creates PaperBananaBench/ with diagram/ and plot/ subfolders)
-unzip -o PaperBananaBench.zip
-
-# 4. Clean up the zip file
-rm PaperBananaBench.zip
+# 2. Run the bundled extraction script (works on Windows, macOS, Linux)
+python "{skill_dir}/scripts/extract_bench.py"
 ```
 
 ### Python environment for plots
@@ -39,8 +33,9 @@ pip install matplotlib numpy pillow
 
 **Important notes:**
 - `{skill_dir}` refers to the directory containing this SKILL.md file (`.claude/skills/drawio-paper/`)
-- Only requires `curl` and `unzip`, no git or git-lfs needed
-- If the download fails due to network issues, retry or ask the user to manually download from https://huggingface.co/datasets/dwzhu/PaperBananaBench/resolve/main/PaperBananaBench.zip
+- Only requires `curl` and Python (stdlib `zipfile`), no git or git-lfs needed
+- Python extraction is used instead of `unzip` to reliably handle long paths on Windows
+- If the download fails due to network issues, retry or ask the user to manually download from https://huggingface.co/datasets/dwzhu/PaperBananaBench/resolve/main/PaperBananaBench.zip and place it at `{skill_dir}/PaperBananaBench.zip`, then run the Python extraction step
 - After setup, `{skill_dir}/PaperBananaBench/diagram/` and `{skill_dir}/PaperBananaBench/plot/` should each contain `ref.json`, `test.json`, and an `images/` folder with reference images
 
 ## When to use this skill
@@ -82,13 +77,13 @@ Follow this 5-stage pipeline to generate each visualization (diagram or plot). S
 Before generating, **always** look at reference images from the benchmark dataset to understand the visual style expected.
 
 **For Diagram mode:**
-1. Read the reference metadata from `{skill_dir}/PaperBananaBench/diagram/ref.json`
+1. Read the reference metadata from `{skill_dir}/PaperBananaBench/diagram/ref.json` and `{skill_dir}/PaperBananaBench/diagram/test.json`
 2. Based on the user's topic (domain) and visual intent (diagram type), select 3-5 relevant reference images to study
 3. Use the Read tool to view the selected reference images from `{skill_dir}/PaperBananaBench/diagram/images/`
 4. Note the visual patterns: layout structure, color schemes, grouping strategies, icon usage, arrow styles
 
 **For Plot mode:**
-1. Read the reference metadata from `{skill_dir}/PaperBananaBench/plot/ref.json`
+1. Read the reference metadata from `{skill_dir}/PaperBananaBench/plot/ref.json` and `{skill_dir}/PaperBananaBench/plot/test.json`
 2. Based on the user's data type and desired plot type, select 3-5 relevant reference plot images to study
 3. Use the Read tool to view the selected reference images from `{skill_dir}/PaperBananaBench/plot/images/`
 4. Note the visual patterns: color palette, axis styling, legend placement, annotation style, chart type conventions
