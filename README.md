@@ -9,6 +9,9 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 | [`ml-paper-writing`](#ml-paper-writing) | Write publication-ready ML/AI papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) |
 | [`pyzotero`](#pyzotero) | Programmatically manage Zotero libraries: retrieve, create, update items, export BibTeX | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) |
 | [`drawio`](#drawio) | Generate and export draw.io diagrams as `.drawio`, PNG, SVG, or PDF | [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) |
+| [`drawio-paper`](#drawio-paper) | Generate publication-quality academic diagrams and statistical plots via PaperBanana pipeline | Original |
+| [`hugging-face-paper-pages`](#hugging-face-paper-pages) | Look up and read Hugging Face paper pages, fetch structured metadata for AI research papers | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md) |
+| [`alphaxiv-paper-lookup`](#alphaxiv-paper-lookup) | Look up arXiv papers on AlphaXiv for structured AI-generated overviews | Original |
 
 ---
 
@@ -20,6 +23,8 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 - For `drawio` exports: [draw.io desktop app](https://github.com/jgraph/drawio-desktop/releases)
 - For `ml-paper-writing`: LaTeX distribution ([TeX Live](https://tug.org/texlive/) recommended) and optional Python packages (`semanticscholar`, `arxiv`, `habanero`, `requests`)
 - For `pyzotero`: `pyzotero` Python package (`uv add pyzotero`) and a [Zotero API key](https://www.zotero.org/settings/keys)
+- For `drawio-paper`: Python with `matplotlib`, `numpy`, `pillow` and the PaperBananaBench dataset (see [setup](#setup-1))
+- For `hugging-face-paper-pages` and `alphaxiv-paper-lookup`: no additional setup required
 
 ### Installation
 
@@ -188,6 +193,126 @@ The draw.io desktop app must be installed for export (PNG/SVG/PDF). The skill au
 
 ---
 
+## drawio-paper
+
+> Generate publication-quality academic paper diagrams and statistical plots using a PaperBanana-inspired multi-agent pipeline.
+
+### What It Does
+
+- **Diagram mode**: Transforms methodology sections and figure captions into polished `.drawio` diagrams through retrieval, planning, styling, visualization, and critique stages
+- **Plot mode**: Transforms raw data (tabular/JSON) into publication-ready statistical plots via Python/matplotlib, following the same multi-stage pipeline
+- Uses reference-driven design from the PaperBananaBench dataset for aesthetically refined outputs
+
+### Setup
+
+Before first use, download the PaperBananaBench reference dataset:
+
+```bash
+# Download from Hugging Face
+curl -L -o .claude/skills/drawio-paper/PaperBananaBench.zip \
+  https://huggingface.co/datasets/dwzhu/PaperBananaBench/resolve/main/PaperBananaBench.zip
+
+# Extract
+python .claude/skills/drawio-paper/scripts/extract_bench.py
+```
+
+For plots, ensure Python packages are available:
+
+```bash
+pip install matplotlib numpy pillow
+```
+
+### Usage
+
+```
+/drawio-paper create a framework overview diagram from the methodology section
+/drawio-paper generate a bar chart comparing model performance from results.csv
+/drawio-paper pipeline diagram for the training workflow described in Section 3
+```
+
+---
+
+## hugging-face-paper-pages
+
+> Look up and read Hugging Face paper pages, and fetch structured metadata for AI research papers.
+
+### What It Does
+
+- **Fetches paper content as markdown** from Hugging Face paper pages (`hf.co/papers/{ID}.md`)
+- **Retrieves structured metadata** via the Papers API: authors, linked models/datasets/spaces, GitHub repo, project page
+- **Searches papers** with hybrid semantic and full-text search
+- **Browses Daily Papers** feed with date/week/month filtering
+- Supports input from Hugging Face URLs, arXiv URLs, or raw arXiv IDs
+
+### Supported Inputs
+
+| Input | Paper ID |
+|-------|----------|
+| `https://huggingface.co/papers/2602.08025` | `2602.08025` |
+| `https://huggingface.co/papers/2602.08025.md` | `2602.08025` |
+| `https://arxiv.org/abs/2602.08025` | `2602.08025` |
+| `https://arxiv.org/pdf/2602.08025` | `2602.08025` |
+| `2602.08025v1` | `2602.08025v1` |
+| `2602.08025` | `2602.08025` |
+
+### API Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /papers/{ID}.md` | Paper content as markdown |
+| `GET /api/papers/{ID}` | Structured metadata (authors, summary, links) |
+| `GET /api/papers/search?q=...` | Hybrid semantic + full-text search |
+| `GET /api/daily_papers` | Daily Papers feed with filtering |
+| `GET /api/models?filter=arxiv:{ID}` | Models linked to a paper |
+| `GET /api/datasets?filter=arxiv:{ID}` | Datasets linked to a paper |
+| `GET /api/spaces?filter=arxiv:{ID}` | Spaces linked to a paper |
+
+### Usage
+
+```
+/hugging-face-paper-pages summarize https://huggingface.co/papers/2602.08025
+/hugging-face-paper-pages explain paper 2602.08025
+/hugging-face-paper-pages find models linked to this paper
+```
+
+### Notes
+
+- No authentication required for public paper pages
+- Write endpoints (claim authorship, index paper, update links) require `Authorization: Bearer $HF_TOKEN`
+- Prefer the `.md` endpoint for reliable machine-readable output
+
+---
+
+## alphaxiv-paper-lookup
+
+> Look up arXiv papers on AlphaXiv for structured AI-generated overviews.
+
+### What It Does
+
+- **Fetches structured AI-generated overviews** of arXiv papers from `alphaxiv.org/overview/{ID}.md`
+- **Falls back to full paper text** via `alphaxiv.org/abs/{ID}.md` when more detail is needed
+- Faster and more reliable than reading raw PDFs
+- No authentication required
+
+### Supported Inputs
+
+| Input | Paper ID |
+|-------|----------|
+| `https://arxiv.org/abs/2401.12345` | `2401.12345` |
+| `https://arxiv.org/pdf/2401.12345` | `2401.12345` |
+| `https://alphaxiv.org/overview/2401.12345` | `2401.12345` |
+| `2401.12345v2` | `2401.12345v2` |
+| `2401.12345` | `2401.12345` |
+
+### Usage
+
+```
+/alphaxiv-paper-lookup summarize 2401.12345
+/alphaxiv-paper-lookup explain https://arxiv.org/abs/2401.12345
+```
+
+---
+
 ## Repository Structure
 
 ```
@@ -213,7 +338,15 @@ The draw.io desktop app must be installed for export (PNG/SVG/PDF). The skill au
     ├── pyzotero/
     │   ├── SKILL.md                  # Skill definition
     │   └── references/               # API docs (read, write, search, export…)
-    └── drawio/
+    ├── drawio/
+    │   └── SKILL.md                  # Skill definition
+    ├── drawio-paper/
+    │   ├── SKILL.md                  # Skill definition
+    │   ├── scripts/                  # Setup scripts (extract_bench.py)
+    │   └── PaperBananaBench/         # Reference dataset (after setup)
+    ├── hugging-face-paper-pages/
+    │   └── SKILL.md                  # Skill definition
+    └── alphaxiv-paper-lookup/
         └── SKILL.md                  # Skill definition
 ```
 
@@ -224,6 +357,9 @@ The draw.io desktop app must be installed for export (PNG/SVG/PDF). The skill au
 - **ml-paper-writing** skill: [Orchestra Research / AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) — MIT License
 - **pyzotero** skill: [K-Dense-AI / claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) — MIT License
 - **drawio** skill: [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp)
+- **drawio-paper** skill: PaperBanana-inspired pipeline, reference dataset from [dwzhu/PaperBananaBench](https://huggingface.co/datasets/dwzhu/PaperBananaBench)
+- **hugging-face-paper-pages** skill: [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md)
+- **alphaxiv-paper-lookup** skill: [AlphaXiv](https://alphaxiv.org)
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 
 ---
