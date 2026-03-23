@@ -12,6 +12,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 | [`drawio-paper`](#drawio-paper) | Generate publication-quality academic diagrams and statistical plots via PaperBanana pipeline | Original |
 | [`hugging-face-paper-pages`](#hugging-face-paper-pages) | Look up and read Hugging Face paper pages, fetch structured metadata for AI research papers | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md) |
 | [`alphaxiv-paper-lookup`](#alphaxiv-paper-lookup) | Look up arXiv papers on AlphaXiv for structured AI-generated overviews | Original |
+| [`hpq-xray-paper`](#hpq-xray-paper) | X-ray a paper: extract core argument, prior work lineage, advisor-style review, and personal cognitive delta cards | [ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper) (modified) |
 
 ---
 
@@ -25,6 +26,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 - For `pyzotero`: `pyzotero` Python package (`uv add pyzotero`) and a [Zotero API key](https://www.zotero.org/settings/keys)
 - For `drawio-paper`: Python with `matplotlib`, `numpy`, `pillow` and the PaperBananaBench dataset (see [setup](#setup-1))
 - For `hugging-face-paper-pages` and `alphaxiv-paper-lookup`: no additional setup required
+- For `hpq-xray-paper`: Python 3 (for helper scripts); optional `know/soul.md` and `know/memory.md` for personalized cognitive delta
 
 ### Installation
 
@@ -313,6 +315,52 @@ pip install matplotlib numpy pillow
 
 ---
 
+## hpq-xray-paper
+
+> X-ray a research paper: extract what it says, trace its intellectual lineage, give an advisor-level review, and surface personal cognitive deltas.
+
+### What It Does
+
+This skill performs four tasks — and only four — on any academic paper:
+
+1. **What the paper says** — Problem → Perspective → Result, written in plain language with a napkin-sketch ASCII diagram of the core mechanism
+2. **Standing on whose shoulders** — Identifies 5–7 key prior works that form the paper's intellectual lineage, with role annotations (Foundation, Inspiration, Gap, Baseline, Extension, Related Problem) and an ASCII genealogy chart
+3. **Advisor review** — A candid evaluation as a senior PhD advisor: topic quality, method maturity, experimental rigor, writing quality, and a verdict (strong accept → strong reject)
+4. **What it means for me** — Cognitive delta cards (ASCII art) that visualize how the paper's insights could change a specific thinking habit, decision pattern, or blind spot
+
+### Origin
+
+Forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper) with the following modifications:
+
+- **Added prior work analysis** (Task 2): traces the paper's intellectual lineage with role-classified references and an ASCII genealogy chart
+- **Added advisor review** (Task 3): simulates a senior PhD advisor giving a candid assessment with a formal verdict
+- **Changed note template to Markdown**: output is a structured `.md` file with YAML frontmatter instead of plain text
+- **Added helper scripts**: `search_paper.py` for Semantic Scholar lookups and `append_to_memory.py` for automated paper memory logging
+
+### How It Works
+
+1. Accepts an arXiv ID, URL, or PDF path and converts arXiv links to `/html/` format for full-text fetching
+2. Loads a personal cognitive baseline from `know/soul.md` and `know/memory.md` (if present)
+3. Runs through the four analysis tasks with strict writing quality checks (no jargon, no filler, oral-style clarity)
+4. Generates a timestamped Markdown report in `notes/` and appends a summary entry to `know/paper_memory.md`
+
+### Usage
+
+```
+/hpq-xray-paper 2601.01290
+/hpq-xray-paper https://arxiv.org/abs/2601.01290
+/hpq-xray-paper path/to/paper.pdf
+```
+
+### Key Constraints
+
+- **Zero-jargon rule**: every technical concept must be grounded in a familiar scenario before the term is introduced
+- **ASCII art only**: all diagrams use pure ASCII characters — no Unicode box-drawing symbols
+- **Honesty**: if there is no cognitive delta, the output says "delta ≈ 0" rather than fabricating insights
+- **Writing quality gates (L2)**: oral test, short-word preference, one-idea-per-sentence, no academic filler
+
+---
+
 ## Repository Structure
 
 ```
@@ -346,8 +394,15 @@ pip install matplotlib numpy pillow
     │   └── PaperBananaBench/         # Reference dataset (after setup)
     ├── hugging-face-paper-pages/
     │   └── SKILL.md                  # Skill definition
-    └── alphaxiv-paper-lookup/
-        └── SKILL.md                  # Skill definition
+    ├── alphaxiv-paper-lookup/
+    │   └── SKILL.md                  # Skill definition
+    └── hpq-xray-paper/
+        ├── SKILL.md                  # Skill definition
+        ├── references/
+        │   └── template.md           # Markdown report template
+        └── scripts/
+            ├── append_to_memory.py   # Auto-append to paper_memory.md
+            └── search_paper.py       # Semantic Scholar paper lookup
 ```
 
 ---
@@ -360,6 +415,7 @@ pip install matplotlib numpy pillow
 - **drawio-paper** skill: PaperBanana-inspired pipeline, reference dataset from [dwzhu/PaperBananaBench](https://huggingface.co/datasets/dwzhu/PaperBananaBench)
 - **hugging-face-paper-pages** skill: [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md)
 - **alphaxiv-paper-lookup** skill: [AlphaXiv](https://alphaxiv.org)
+- **hpq-xray-paper** skill: forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper), modified with prior work analysis, advisor review, and Markdown note format
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 
 ---
