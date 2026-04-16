@@ -13,6 +13,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 | [`hugging-face-paper-pages`](#hugging-face-paper-pages) | Look up and read Hugging Face paper pages, fetch structured metadata for AI research papers | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md) |
 | [`alphaxiv-paper-lookup`](#alphaxiv-paper-lookup) | Look up arXiv papers on AlphaXiv for structured AI-generated overviews | Original |
 | [`hpq-xray-paper`](#hpq-xray-paper) | X-ray a paper: extract core argument, prior work lineage, advisor-style review, and personal cognitive delta cards | [ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper) (modified) |
+| [`paper-finder`](#paper-finder) | Find and organize ML/AI research papers into a reusable topic knowledge base with summaries and BibTeX | [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main) (adapted) |
 
 ---
 
@@ -27,6 +28,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 - For `drawio-paper`: Python with `matplotlib`, `numpy`, `pillow` and the PaperBananaBench dataset (see [setup](#setup-1))
 - For `hugging-face-paper-pages` and `alphaxiv-paper-lookup`: no additional setup required
 - For `hpq-xray-paper`: Python 3 (for helper scripts); optional `know/soul.md` and `know/memory.md` for personalized cognitive delta
+- For `paper-finder`: no required setup; optional web access recommended for current paper discovery
 
 ### Installation
 
@@ -361,6 +363,43 @@ Forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skil
 
 ---
 
+## paper-finder
+
+> Find, rank, and organize related papers into a persistent topic workspace.
+
+### What It Does
+
+- **Searches broadly** across arXiv, Semantic Scholar, Google Scholar-style web results, and major venues
+- **Covers multiple angles** for a topic: direct keywords, cross-domain synonyms, enabling mechanisms, and motivating applications
+- **Builds a reusable paper workspace** with a memory bank, mind graph, per-paper summaries, discussion notes, and combined BibTeX
+- **Keeps discovery current** by requiring web search rather than relying only on model memory
+
+### Workspace Layout
+
+```text
+<topic-name>/
+├── memory-bank.md
+├── mind-graph.md
+├── references.bib
+├── summaries/
+├── discussions/
+└── pdfs/              # only when explicitly requested
+```
+
+### Usage
+
+```
+/paper-finder find papers on mixed-resolution diffusion transformers
+/paper-finder build a literature review workspace for efficient video generation
+/paper-finder compare recent CVPR and ICCV papers on 3D Gaussian splatting
+```
+
+### Origin
+
+Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main) and included here as part of the broader OpenPaper skill collection.
+
+---
+
 ## Repository Structure
 
 ```
@@ -396,6 +435,8 @@ Forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skil
     │   └── SKILL.md                  # Skill definition
     ├── alphaxiv-paper-lookup/
     │   └── SKILL.md                  # Skill definition
+    ├── paper-finder/
+    │   └── SKILL.md                  # Skill definition
     └── hpq-xray-paper/
         ├── SKILL.md                  # Skill definition
         ├── references/
@@ -415,6 +456,7 @@ Forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skil
 - **drawio-paper** skill: PaperBanana-inspired pipeline, reference dataset from [dwzhu/PaperBananaBench](https://huggingface.co/datasets/dwzhu/PaperBananaBench)
 - **hugging-face-paper-pages** skill: [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md)
 - **alphaxiv-paper-lookup** skill: [AlphaXiv](https://alphaxiv.org)
+- **paper-finder** skill: adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main)
 - **hpq-xray-paper** skill: forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper), modified with prior work analysis, advisor review, and Markdown note format
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 
