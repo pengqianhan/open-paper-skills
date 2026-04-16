@@ -14,6 +14,9 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 | [`alphaxiv-paper-lookup`](#alphaxiv-paper-lookup) | Look up arXiv papers on AlphaXiv for structured AI-generated overviews | Original |
 | [`hpq-xray-paper`](#hpq-xray-paper) | X-ray a paper: extract core argument, prior work lineage, advisor-style review, and personal cognitive delta cards | [ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper) (modified) |
 | [`paper-finder`](#paper-finder) | Find and organize ML/AI research papers into a reusable topic knowledge base with summaries and BibTeX | [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main) (adapted) |
+| [`deepxiv-cli`](#deepxiv-cli) | Access open-access academic papers via CLI with hybrid search and section-level reads | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
+| [`deepxiv-baseline-table`](#deepxiv-baseline-table) | Build markdown baseline comparison tables from deepxiv search and targeted section reads | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
+| [`deepxiv-trending-digest`](#deepxiv-trending-digest) | Summarize trending papers into a concise markdown digest with deep-dive recommendations | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 
 ---
 
@@ -29,6 +32,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 - For `hugging-face-paper-pages` and `alphaxiv-paper-lookup`: no additional setup required
 - For `hpq-xray-paper`: Python 3 (for helper scripts); optional `know/soul.md` and `know/memory.md` for personalized cognitive delta
 - For `paper-finder`: no required setup; optional web access recommended for current paper discovery
+- For `deepxiv-cli`, `deepxiv-baseline-table`, and `deepxiv-trending-digest`: install DeepXiv CLI (`pip install deepxiv-sdk`)
 
 ### Installation
 
@@ -400,6 +404,73 @@ Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/m
 
 ---
 
+## deepxiv-cli
+
+> Access open-access academic papers through the DeepXiv CLI with hybrid search and token-efficient reading.
+
+### What It Does
+
+- **Searches papers** with hybrid retrieval (BM25 + vector semantics)
+- **Reads at multiple depths**: brief summary, paper structure (`--head`), section-level, or full text
+- **Supports multiple sources**: arXiv and PMC today, with bioRxiv/medRxiv planned
+- **Includes an analysis agent** via `deepxiv agent query` for higher-level synthesis
+
+### Usage
+
+```
+/deepxiv-cli search papers about agent memory from this month
+/deepxiv-cli read arXiv 2409.05591 with --brief
+/deepxiv-cli show sections for 2409.05591 with --head
+/deepxiv-cli summarize the Introduction section of 2409.05591
+```
+
+---
+
+## deepxiv-baseline-table
+
+> Build a markdown baseline table for a topic using DeepXiv search plus targeted experiment-section extraction.
+
+### What It Does
+
+- **Finds candidate papers** by topic and date range with `deepxiv search`
+- **Screens efficiently** using `deepxiv paper <id> --brief`
+- **Extracts benchmark evidence** from `--head` and experiment/result sections only
+- **Outputs comparison-ready tables** including open-source status, datasets, metrics, and score notes
+
+### Typical Output Columns
+
+| Title | arXiv | URL | Open Source | Code URL | Datasets / Benchmarks | Metrics / Scores | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+
+### Usage
+
+```
+/deepxiv-baseline-table build a baseline table for agentic memory papers in the last 30 days
+/deepxiv-baseline-table compare datasets and benchmark scores for recent multimodal reasoning papers
+```
+
+---
+
+## deepxiv-trending-digest
+
+> Turn recent DeepXiv trending papers into a concise markdown digest with recommended deep dives.
+
+### What It Does
+
+- **Collects trending papers** from `deepxiv trending` over a configurable time window
+- **Builds quick summaries** from `--brief` for all shortlisted papers
+- **Deepens selectively** with `--head` and 1-2 high-value sections for top candidates
+- **Produces a digest report** with executive themes, per-paper takeaways, and deep-dive recommendations
+
+### Usage
+
+```
+/deepxiv-trending-digest make a 7-day trending digest and highlight top 3 papers worth deeper reading
+/deepxiv-trending-digest summarize this week's hottest papers and suggest next sections to read
+```
+
+---
+
 ## Repository Structure
 
 ```
@@ -437,6 +508,12 @@ Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/m
     │   └── SKILL.md                  # Skill definition
     ├── paper-finder/
     │   └── SKILL.md                  # Skill definition
+    ├── deepxiv-cli/
+    │   └── SKILL.md                  # Skill definition
+    ├── deepxiv-baseline-table/
+    │   └── SKILL.md                  # Skill definition
+    ├── deepxiv-trending-digest/
+    │   └── SKILL.md                  # Skill definition
     └── hpq-xray-paper/
         ├── SKILL.md                  # Skill definition
         ├── references/
@@ -458,6 +535,9 @@ Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/m
 - **alphaxiv-paper-lookup** skill: [AlphaXiv](https://alphaxiv.org)
 - **paper-finder** skill: adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main)
 - **hpq-xray-paper** skill: forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper), modified with prior work analysis, advisor review, and Markdown note format
+- **deepxiv-cli** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
+- **deepxiv-baseline-table** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
+- **deepxiv-trending-digest** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 
 ---
