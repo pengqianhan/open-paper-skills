@@ -1,4 +1,7 @@
-[how to be good at research from vivek](https://x.com/itsreallyvivek/article/2064686372737454155)
+# How to be good at research
+Author: vivek
+Date: June 11, 2026
+Source: https://x.com/itsreallyvivek/article/2064686372737454155
 # Nobody Really Teaches You Research
 
 Nobody really teaches you research. You get a desk, a problem someone else picked, and a vague instruction to produce something novel. So most people reverse-engineer the job from what they can see — papers, threads, and announcements — and what they end up learning is how to **look like** a researcher rather than how to **be** one.
