@@ -20,7 +20,7 @@ John Schulman's guide to ML research splits the work into two modes. In one, you
 
 Shared reading lists produce shared ideas. If your information diet is the trending page of arXiv plus whatever survives the group chat filter, you will reliably reach the same conclusions as everyone else, at the same time, which makes those conclusions worth approximately nothing.
 
-**Old material is criminally underpriced.** This field reruns its own past on a delay: Mixture of Experts dates to 1991, LSTMs to 1997, backprop went mainstream in 1986. Rich Sutton needed about a thousand words in 2019 to write *The Bitter Lesson*, and it predicts the shape of the field better than surveys ten times its length.
+**Old material is criminally underpriced.** This field reruns its own past on a delay: Mixture of Experts dates to 1991, LSTMs to 1997, backprop went mainstream in 1986. Rich Sutton needed about a thousand words in 2019 to write [The Bitter Lesson](TheBitterLesson.md), and it predicts the shape of the field better than surveys ten times its length.
 
 Claude Shannon gave a talk on creative thinking in 1952 where his opening move was to shrink a problem until it's nearly trivial, crack the small version, then reintroduce the difficulty one piece at a time. That single trick will carry you through more walls than any modern productivity advice.
 
