@@ -10,7 +10,7 @@ Local note: Source note with relevant excerpt and context.
 
 ## Relevant Context
 
-Olah and Carter argue that fields accumulate debt when important ideas remain poorly explained, undigested, or buried in noisy literature. `research_Bible.md` uses the essay to support public writing and explanation as real research contributions.
+Olah and Carter argue that fields accumulate debt when important ideas remain poorly explained, undigested, or buried in noisy literature. `how_to_be_good_at_research.md` uses the essay to support public writing and explanation as real research contributions.
 
 Short excerpt:
 

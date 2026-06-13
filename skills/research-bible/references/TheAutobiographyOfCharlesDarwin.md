@@ -8,7 +8,7 @@ Local note: Source note with relevant excerpt and context.
 
 ## Relevant Context
 
-Darwin describes a "golden rule" of recording facts, observations, or thoughts that opposed his general results immediately, because contrary evidence was easier to forget. `research_Bible.md` adapts this as a procedure for research logs and failed runs.
+Darwin describes a "golden rule" of recording facts, observations, or thoughts that opposed his general results immediately, because contrary evidence was easier to forget. `how_to_be_good_at_research.md` adapts this as a procedure for research logs and failed runs.
 
 Short excerpts:
 

@@ -9,4 +9,4 @@ Local note: Source note with bibliographic metadata and context, not a full repu
 
 ## Relevant Context
 
-`research_Bible.md` mentions that Mixture of Experts dates to 1991. This is the canonical early paper introducing adaptive mixtures of local expert networks and a gating network.
+`how_to_be_good_at_research.md` mentions that Mixture of Experts dates to 1991. This is the canonical early paper introducing adaptive mixtures of local expert networks and a gating network.

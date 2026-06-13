@@ -7,7 +7,7 @@ A curated collection of [Skills](https://docs.anthropic.com/en/docs/claude-code/
 | Skill | Description | Source |
 |-------|-------------|--------|
 | [`ml-paper-writing`](#ml-paper-writing) | Write publication-ready ML/AI papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) |
-| [`research-bible`](#research-bible) | Turn research_Bible.md principles into concrete ML research plans, loops, logs, and habits | Original |
+| [`research-bible`](#research-bible) | Turn how_to_be_good_at_research.md principles into concrete ML research plans, loops, logs, and habits | Original |
 | [`pyzotero`](#pyzotero) | Programmatically manage Zotero libraries: retrieve, create, update items, export BibTeX | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) |
 | [`drawio`](#drawio) | Generate and export draw.io diagrams as `.drawio`, PNG, SVG, or PDF | [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) |
 | [`drawio-paper`](#drawio-paper) | Generate publication-quality academic diagrams and statistical plots via PaperBanana pipeline | Original |
@@ -70,7 +70,7 @@ The skills are then available from `.claude/skills/` in the target project.
 
 ## research-bible
 
-> Turn research_Bible.md into an operational research workflow.
+> Turn how_to_be_good_at_research.md into an operational research workflow.
 
 ### What It Does
 
@@ -585,7 +585,7 @@ skills/
 - **deepxiv-cli** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-baseline-table** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-trending-digest** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
-- **research-bible** skill: original research workflow based on `research_Bible.md`
+- **research-bible** skill: original research workflow based on `how_to_be_good_at_research.md`
 - **task-file-builder** skill: original task-brief workflow for Claude Code
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 

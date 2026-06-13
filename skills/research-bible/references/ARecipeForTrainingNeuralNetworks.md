@@ -7,7 +7,7 @@ Local note: Source note with relevant excerpt and context, not a full republicat
 
 ## Relevant Context
 
-Karpathy's recipe emphasizes careful inspection of raw data, simple baselines, explicit hypotheses, and debugging neural networks before scaling. `research_Bible.md` refers to two parts of the essay: first, the advice to overfit a tiny batch; second, the recommendation to spend hours manually inspecting raw data.
+Karpathy's recipe emphasizes careful inspection of raw data, simple baselines, explicit hypotheses, and debugging neural networks before scaling. `how_to_be_good_at_research.md` refers to two parts of the essay: first, the advice to overfit a tiny batch; second, the recommendation to spend hours manually inspecting raw data.
 
 Short excerpt:
 

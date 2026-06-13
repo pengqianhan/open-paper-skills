@@ -8,7 +8,7 @@ Local note: Source note with relevant excerpt and context, not a full republicat
 
 ## Relevant Context
 
-Shannon describes several "mental gimmicks" for research and invention. The passage cited in `research_Bible.md` is his simplification strategy: remove everything but the essentials, solve the simplified version, then add refinements until the solution applies to the original problem.
+Shannon describes several "mental gimmicks" for research and invention. The passage cited in `how_to_be_good_at_research.md` is his simplification strategy: remove everything but the essentials, solve the simplified version, then add refinements until the solution applies to the original problem.
 
 Short excerpt:
 

@@ -8,7 +8,7 @@ Local note: Source note with relevant excerpt and context, not a full republicat
 
 ## Relevant Context
 
-Feynman's address is the source for the rule about not fooling yourself. `research_Bible.md` uses it as an argument for written records and intellectual honesty in research.
+Feynman's address is the source for the rule about not fooling yourself. `how_to_be_good_at_research.md` uses it as an argument for written records and intellectual honesty in research.
 
 Short excerpt:
 

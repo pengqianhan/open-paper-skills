@@ -1,17 +1,17 @@
 ---
 name: research-bible
-description: Research operating-system guidance for ML/AI research. Use when Codex needs to help choose research problems, design experiment loops, improve research taste, debug model training or eval workflows, inspect failures, keep research logs, build reading plans, or turn research_Bible.md principles into concrete plans, checklists, habits, or advice.
+description: Research operating-system guidance for ML/AI research. Use when Codex needs to help choose research problems, design experiment loops, improve research taste, debug model training or eval workflows, inspect failures, keep research logs, build reading plans, or turn how_to_be_good_at_research.md principles into concrete plans, checklists, habits, or advice.
 ---
 
 # Research Bible
 
 ## Overview
 
-Use this skill to turn the principles in `references/research_Bible.md` into concrete research behavior. Keep the original essay's claims and voice intact when adapting it; prefer adding structure around it rather than rewriting it.
+Use this skill to turn the principles in `references/how_to_be_good_at_research.md` into concrete research behavior. Keep the original essay's claims and voice intact when adapting it; prefer adding structure around it rather than rewriting it.
 
 ## Reference Loading
 
-Read `references/research_Bible.md` first when the user asks for research advice, a research workflow, or a plan inspired by this skill.
+Read `references/how_to_be_good_at_research.md` first when the user asks for research advice, a research workflow, or a plan inspired by this skill.
 
 Load source notes only when attribution or deeper context matters:
 
@@ -87,4 +87,4 @@ Next action:
 
 ## Style Constraints
 
-Be concrete and operational. Avoid generic motivation. Do not turn `research_Bible.md` into a rewritten essay unless the user asks for a rewrite. If quoting or adapting the essay, preserve wording where possible and add links to the local reference files.
+Be concrete and operational. Avoid generic motivation. Do not turn `how_to_be_good_at_research.md` into a rewritten essay unless the user asks for a rewrite. If quoting or adapting the essay, preserve wording where possible and add links to the local reference files.
