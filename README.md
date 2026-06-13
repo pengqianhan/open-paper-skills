@@ -7,6 +7,7 @@ A curated collection of [Skills](https://docs.anthropic.com/en/docs/claude-code/
 | Skill | Description | Source |
 |-------|-------------|--------|
 | [`ml-paper-writing`](#ml-paper-writing) | Write publication-ready ML/AI papers for NeurIPS, ICML, ICLR, ACL, AAAI, COLM | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) |
+| [`research-bible`](#research-bible) | Turn research_Bible.md principles into concrete ML research plans, loops, logs, and habits | Original |
 | [`pyzotero`](#pyzotero) | Programmatically manage Zotero libraries: retrieve, create, update items, export BibTeX | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) |
 | [`drawio`](#drawio) | Generate and export draw.io diagrams as `.drawio`, PNG, SVG, or PDF | [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) |
 | [`drawio-paper`](#drawio-paper) | Generate publication-quality academic diagrams and statistical plots via PaperBanana pipeline | Original |
@@ -26,6 +27,7 @@ A curated collection of [Skills](https://docs.anthropic.com/en/docs/claude-code/
 ### Prerequisites
 
 - [Claude Code](https://claude.ai/code) (CLI)
+- For `research-bible`: no additional setup required
 - For `drawio` exports: [draw.io desktop app](https://github.com/jgraph/drawio-desktop/releases)
 - For `ml-paper-writing`: LaTeX distribution ([TeX Live](https://tug.org/texlive/) recommended) and optional Python packages (`semanticscholar`, `arxiv`, `habanero`, `requests`)
 - For `pyzotero`: `pyzotero` Python package (`uv add pyzotero`) and a [Zotero API key](https://www.zotero.org/settings/keys)
@@ -63,6 +65,28 @@ ln -s path/to/openpaper/skills .claude/skills
 ```
 
 The skills are then available from `.claude/skills/` in the target project.
+
+---
+
+## research-bible
+
+> Turn research_Bible.md into an operational research workflow.
+
+### What It Does
+
+- **Guides problem selection** from desired outcomes, falsifiable bets, and plausible attacks
+- **Tightens experiment loops** with forecasts, cheap first runs, reproducible configs, and small-case validation
+- **Improves debugging** through data inspection, single-batch overfit checks, failure-pile analysis, strong baselines, and ablations
+- **Keeps research honest** with structured logs, contrary-evidence capture, and source-backed research habits
+
+### Usage
+
+```
+/research-bible help me choose between these research directions
+/research-bible design an experiment loop for this model idea
+/research-bible turn my failed evals into a debugging plan
+/research-bible make a research log template for this project
+```
 
 ---
 
@@ -536,6 +560,10 @@ skills/
 ├── pyzotero/
 │   ├── SKILL.md
 │   └── references/
+├── research-bible/
+│   ├── SKILL.md
+│   ├── agents/
+│   └── references/
 └── task-file-builder/
     ├── SKILL.md
     ├── assets/
@@ -557,6 +585,7 @@ skills/
 - **deepxiv-cli** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-baseline-table** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-trending-digest** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
+- **research-bible** skill: original research workflow based on `research_Bible.md`
 - **task-file-builder** skill: original task-brief workflow for Claude Code
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 
