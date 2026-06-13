@@ -1,6 +1,8 @@
 ---
 name: research-bible
 description: Research operating-system guidance for ML/AI research. Use this skill when you need to help choose research problems, design experiment loops, improve research taste, debug model training or eval workflows, inspect failures, keep research logs, build reading plans, or turn how_to_be_good_at_research.md principles into concrete plans, checklists, habits, or advice.
+author: Pengqian Han
+version: 0.0.1
 ---
 
 # Research Bible
