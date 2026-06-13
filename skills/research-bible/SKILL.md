@@ -40,6 +40,30 @@ When helping with a research task, shape the answer around the smallest useful s
 7. Tune baselines and ablate. Treat gains as provisional until baselines are strong and the component carrying the result is known.
 8. Distill publicly when useful. Turn hard-won understanding into clear notes, posts, diagrams, or tools when that would reduce research debt.
 
+## Research Checklist
+
+Before starting:
+
+- Problem is chosen deliberately, not absorbed from hype.
+- Desired outcome is explicit.
+- Plausible attack and falsification condition are written down.
+- Old and adjacent-field sources have been checked.
+
+Before running experiments:
+
+- Hypothesis, setup, expectation, and update rule are logged.
+- First run is cheap and reproducible.
+- Baseline is strong enough to be meaningful.
+- Small-case or single-batch validation has passed.
+
+After results:
+
+- Failures or transcripts were inspected by hand.
+- Errors were sorted into piles.
+- The largest pile has a concrete next action.
+- Ablations identify which component carries the result.
+- Updated belief is written down.
+
 ## Output Patterns
 
 For a research plan, produce a compact checklist with sections for problem, prior art, experiment loop, failure analysis, baseline/ablation plan, and logging.
