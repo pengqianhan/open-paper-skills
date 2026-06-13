@@ -1,6 +1,6 @@
-# OpenPaper — AI-Powered Academic Paper Writing with Claude Code
+# Open-Paper-skills — AI-Powered Academic skills
 
-A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/claude-code/skills) that turn Claude into a capable research collaborator: from drafting publication-ready ML papers to generating professional diagrams.
+A curated collection of [Skills](https://docs.anthropic.com/en/docs/claude-code/skills) that turn AI (e.g., Codex or Claude Code) into a capable research collaborator: from drafting publication-ready ML papers to generating professional diagrams.
 
 ## Skills
 
