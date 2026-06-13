@@ -17,6 +17,7 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 | [`deepxiv-cli`](#deepxiv-cli) | Access open-access academic papers via CLI with hybrid search and section-level reads | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [`deepxiv-baseline-table`](#deepxiv-baseline-table) | Build markdown baseline comparison tables from deepxiv search and targeted section reads | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [`deepxiv-trending-digest`](#deepxiv-trending-digest) | Summarize trending papers into a concise markdown digest with deep-dive recommendations | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
+| [`task-file-builder`](#task-file-builder) | Draft context-rich `task.md` briefs for fresh Claude Code sessions | Original |
 
 ---
 
@@ -33,26 +34,35 @@ A curated collection of [Claude Code Skills](https://docs.anthropic.com/en/docs/
 - For `hpq-xray-paper`: Python 3 (for helper scripts); optional `know/soul.md` and `know/memory.md` for personalized cognitive delta
 - For `paper-finder`: no required setup; optional web access recommended for current paper discovery
 - For `deepxiv-cli`, `deepxiv-baseline-table`, and `deepxiv-trending-digest`: install DeepXiv CLI (`pip install deepxiv-sdk`)
+- For `task-file-builder`: no additional setup required
 
 ### Installation
 
-Clone this repository into any project directory where you want to use the skills:
+This repository stores skills in the top-level [`skills/`](skills/) folder. Claude Code loads project skills from `.claude/skills/`, so install them by copying or symlinking this folder into your target project.
+
+Clone this repository once:
 
 ```bash
-git clone https://github.com/your-username/openpaper.git
-cd your-project
-cp -r path/to/openpaper/.claude .
+git clone https://github.com/pengqianhan/openpaper.git
 ```
 
-Or clone directly inside your research project:
+Copy the skills into a project:
 
 ```bash
 cd my-research-project
-git clone https://github.com/your-username/openpaper.git .claude-skills
-cp -r .claude-skills/.claude .
+mkdir -p .claude
+cp -R path/to/openpaper/skills .claude/
 ```
 
-The skills are automatically detected by Claude Code from the `.claude/skills/` directory.
+Or symlink them if you want updates in this repo to take effect immediately:
+
+```bash
+cd my-research-project
+mkdir -p .claude
+ln -s path/to/openpaper/skills .claude/skills
+```
+
+The skills are then available from `.claude/skills/` in the target project.
 
 ---
 
@@ -111,7 +121,7 @@ AI-generated citations have a ~40% error rate. This skill enforces a strict work
 ### Included Templates
 
 ```
-.claude/skills/ml-paper-writing/templates/
+skills/ml-paper-writing/templates/
 ├── neurips2025/      # NeurIPS 2025
 ├── icml2026/         # ICML 2026
 ├── iclr2026/         # ICLR 2026
@@ -471,56 +481,65 @@ Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/m
 
 ---
 
+## task-file-builder
+
+> Draft a focused `task.md` brief for starting a clean Claude Code session with enough context to execute well.
+
+### What It Does
+
+- **Turns rough intent into a concrete task brief** with objective, acceptance criteria, relevant files, constraints, background, known context, and open questions
+- **Front-loads context** so a fresh Claude Code session can begin implementation without repeated clarification
+- **Keeps acceptance criteria observable** with checkbox-style outcomes the executing agent can verify
+- **Supports both workflows**: writing `task.md` in the repo or producing a prompt that can be pasted into a new session
+
+### Usage
+
+```
+/task-file-builder help me draft a task for refactoring the paper search pipeline
+/task-file-builder turn this bug report into a task.md
+/task-file-builder prepare a brief for a fresh Claude Code session
+```
+
+---
+
 ## Repository Structure
 
 ```
-.claude/
-└── skills/
-    ├── ml-paper-writing/
-    │   ├── SKILL.md                  # Skill definition
-    │   ├── templates/                # LaTeX templates per venue
-    │   │   ├── neurips2025/
-    │   │   ├── icml2026/
-    │   │   ├── iclr2026/
-    │   │   ├── acl/
-    │   │   ├── aaai2026/
-    │   │   ├── colm2025/
-    │   │   ├── ieeetran/             # IEEE (IEEEtran v1.8b)
-    │   │   └── acmart/               # ACM (acmart v2.14)
-    │   └── references/
-    │       ├── writing-guide.md      # Gopen & Swan, Perez micro-tips
-    │       ├── citation-workflow.md  # Citation API docs and Python code
-    │       ├── checklists.md         # NeurIPS / ICML / ICLR / ACL checklists
-    │       ├── reviewer-guidelines.md
-    │       └── sources.md
-    ├── pyzotero/
-    │   ├── SKILL.md                  # Skill definition
-    │   └── references/               # API docs (read, write, search, export…)
-    ├── drawio/
-    │   └── SKILL.md                  # Skill definition
-    ├── drawio-paper/
-    │   ├── SKILL.md                  # Skill definition
-    │   ├── scripts/                  # Setup scripts (extract_bench.py)
-    │   └── PaperBananaBench/         # Reference dataset (after setup)
-    ├── hugging-face-paper-pages/
-    │   └── SKILL.md                  # Skill definition
-    ├── alphaxiv-paper-lookup/
-    │   └── SKILL.md                  # Skill definition
-    ├── paper-finder/
-    │   └── SKILL.md                  # Skill definition
-    ├── deepxiv-cli/
-    │   └── SKILL.md                  # Skill definition
-    ├── deepxiv-baseline-table/
-    │   └── SKILL.md                  # Skill definition
-    ├── deepxiv-trending-digest/
-    │   └── SKILL.md                  # Skill definition
-    └── hpq-xray-paper/
-        ├── SKILL.md                  # Skill definition
-        ├── references/
-        │   └── template.md           # Markdown report template
-        └── scripts/
-            ├── append_to_memory.py   # Auto-append to paper_memory.md
-            └── search_paper.py       # Semantic Scholar paper lookup
+skills/
+├── alphaxiv-paper-lookup/
+│   └── SKILL.md
+├── deepxiv-baseline-table/
+│   └── SKILL.md
+├── deepxiv-cli/
+│   ├── SKILL.md
+│   └── agents/
+├── deepxiv-trending-digest/
+│   └── SKILL.md
+├── drawio/
+│   └── SKILL.md
+├── drawio-paper/
+│   ├── SKILL.md
+│   ├── evals/
+│   └── scripts/
+├── hpq-xray-paper/
+│   ├── SKILL.md
+│   ├── references/
+│   └── scripts/
+├── hugging-face-paper-pages/
+│   └── SKILL.md
+├── ml-paper-writing/
+│   ├── SKILL.md
+│   ├── references/
+│   └── templates/
+├── paper-finder/
+│   └── SKILL.md
+├── pyzotero/
+│   ├── SKILL.md
+│   └── references/
+└── task-file-builder/
+    ├── SKILL.md
+    ├── assets/
+    └── examples/
 ```
 
 ---
@@ -538,6 +557,7 @@ Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/m
 - **deepxiv-cli** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-baseline-table** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-trending-digest** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
+- **task-file-builder** skill: original task-brief workflow for Claude Code
 - Writing philosophy sourced from: Neel Nanda, Sebastian Farquhar, Gopen & Swan, Zachary Lipton, Jacob Steinhardt, Ethan Perez, Andrej Karpathy
 
 ---
