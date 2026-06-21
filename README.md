@@ -13,7 +13,6 @@ A curated collection of [Skills](https://docs.anthropic.com/en/docs/claude-code/
 | [`drawio-paper`](#drawio-paper) | Generate publication-quality academic diagrams and statistical plots via PaperBanana pipeline | Original |
 | [`hugging-face-paper-pages`](#hugging-face-paper-pages) | Look up and read Hugging Face paper pages, fetch structured metadata for AI research papers | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md) |
 | [`alphaxiv-paper-lookup`](#alphaxiv-paper-lookup) | Look up arXiv papers on AlphaXiv for structured AI-generated overviews | Original |
-| [`hpq-xray-paper`](#hpq-xray-paper) | X-ray a paper: extract core argument, prior work lineage, advisor-style review, and personal cognitive delta cards | [ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper) (modified) |
 | [`paper-finder`](#paper-finder) | Find and organize ML/AI research papers into a reusable topic knowledge base with summaries and BibTeX | [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main) (adapted) |
 | [`deepxiv-cli`](#deepxiv-cli) | Access open-access academic papers via CLI with hybrid search and section-level reads | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [`deepxiv-baseline-table`](#deepxiv-baseline-table) | Build markdown baseline comparison tables from deepxiv search and targeted section reads | [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
@@ -33,7 +32,6 @@ A curated collection of [Skills](https://docs.anthropic.com/en/docs/claude-code/
 - For `pyzotero`: `pyzotero` Python package (`uv add pyzotero`) and a [Zotero API key](https://www.zotero.org/settings/keys)
 - For `drawio-paper`: Python with `matplotlib`, `numpy`, `pillow` and the PaperBananaBench dataset (see [setup](#setup-1))
 - For `hugging-face-paper-pages` and `alphaxiv-paper-lookup`: no additional setup required
-- For `hpq-xray-paper`: Python 3 (for helper scripts); optional `know/soul.md` and `know/memory.md` for personalized cognitive delta
 - For `paper-finder`: no required setup; optional web access recommended for current paper discovery
 - For `deepxiv-cli`, `deepxiv-baseline-table`, and `deepxiv-trending-digest`: install DeepXiv CLI (`pip install deepxiv-sdk`)
 - For `task-file-builder`: no additional setup required
@@ -355,52 +353,6 @@ pip install matplotlib numpy pillow
 
 ---
 
-## hpq-xray-paper
-
-> X-ray a research paper: extract what it says, trace its intellectual lineage, give an advisor-level review, and surface personal cognitive deltas.
-
-### What It Does
-
-This skill performs four tasks — and only four — on any academic paper:
-
-1. **What the paper says** — Problem → Perspective → Result, written in plain language with a napkin-sketch ASCII diagram of the core mechanism
-2. **Standing on whose shoulders** — Identifies 5–7 key prior works that form the paper's intellectual lineage, with role annotations (Foundation, Inspiration, Gap, Baseline, Extension, Related Problem) and an ASCII genealogy chart
-3. **Advisor review** — A candid evaluation as a senior PhD advisor: topic quality, method maturity, experimental rigor, writing quality, and a verdict (strong accept → strong reject)
-4. **What it means for me** — Cognitive delta cards (ASCII art) that visualize how the paper's insights could change a specific thinking habit, decision pattern, or blind spot
-
-### Origin
-
-Forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper) with the following modifications:
-
-- **Added prior work analysis** (Task 2): traces the paper's intellectual lineage with role-classified references and an ASCII genealogy chart
-- **Added advisor review** (Task 3): simulates a senior PhD advisor giving a candid assessment with a formal verdict
-- **Changed note template to Markdown**: output is a structured `.md` file with YAML frontmatter instead of plain text
-- **Added helper scripts**: `search_paper.py` for Semantic Scholar lookups and `append_to_memory.py` for automated paper memory logging
-
-### How It Works
-
-1. Accepts an arXiv ID, URL, or PDF path and converts arXiv links to `/html/` format for full-text fetching
-2. Loads a personal cognitive baseline from `know/soul.md` and `know/memory.md` (if present)
-3. Runs through the four analysis tasks with strict writing quality checks (no jargon, no filler, oral-style clarity)
-4. Generates a timestamped Markdown report in `notes/` and appends a summary entry to `know/paper_memory.md`
-
-### Usage
-
-```
-/hpq-xray-paper 2601.01290
-/hpq-xray-paper https://arxiv.org/abs/2601.01290
-/hpq-xray-paper path/to/paper.pdf
-```
-
-### Key Constraints
-
-- **Zero-jargon rule**: every technical concept must be grounded in a familiar scenario before the term is introduced
-- **ASCII art only**: all diagrams use pure ASCII characters — no Unicode box-drawing symbols
-- **Honesty**: if there is no cognitive delta, the output says "delta ≈ 0" rather than fabricating insights
-- **Writing quality gates (L2)**: oral test, short-word preference, one-idea-per-sentence, no academic filler
-
----
-
 ## paper-finder
 
 > Find, rank, and organize related papers into a persistent topic workspace.
@@ -545,10 +497,6 @@ skills/
 │   ├── SKILL.md
 │   ├── evals/
 │   └── scripts/
-├── hpq-xray-paper/
-│   ├── SKILL.md
-│   ├── references/
-│   └── scripts/
 ├── hugging-face-paper-pages/
 │   └── SKILL.md
 ├── ml-paper-writing/
@@ -581,7 +529,6 @@ skills/
 - **hugging-face-paper-pages** skill: [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md)
 - **alphaxiv-paper-lookup** skill: [AlphaXiv](https://alphaxiv.org)
 - **paper-finder** skill: adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main)
-- **hpq-xray-paper** skill: forked from [lijigang/ljg-skill-xray-paper](https://github.com/lijigang/ljg-skill-xray-paper), modified with prior work analysis, advisor review, and Markdown note format
 - **deepxiv-cli** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-baseline-table** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
 - **deepxiv-trending-digest** skill: adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main)
