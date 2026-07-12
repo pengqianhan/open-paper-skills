@@ -14,6 +14,8 @@ research capability to an existing Codex or Claude Code project.
 > for project templates, research memory, human context, a paper wiki, and
 > agent operating rules.
 
+![OpenPaper Skills visual overview: modular skills flow into an AI research agent, which produces a polished academic paper with figures, charts, and validated results.](assets/openpaper-skills-hero-v2.png)
+
 ## Choose Your Starting Point
 
 | Your goal | Start here |
