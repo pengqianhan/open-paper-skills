@@ -61,13 +61,19 @@ GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-ma
 
 For catalog maintenance details, see [`skills/README.md`](skills/README.md).
 
-## Upstream and Releases
+## Sync & Provenance
 
-The development source for these skills is
-[AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub).
-This repository is its standalone public distribution for direct skill
-installation. When syncing or publishing a public release, record the source
-hub commit in the release notes so users can trace the exact upstream version.
+| Item | Policy |
+| --- | --- |
+| Development source | [AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub) |
+| Public distribution | This repository, which packages selected skills for direct `gh skill` installation. |
+| Sync record | Every sync or public release should record the full Research-skills-hub commit SHA in its commit message or release notes. |
+| Third-party content | Skills in [`collected-skills/`](collected-skills/) retain their upstream provenance and license; they are not republished as part of the installable catalog. |
+
+This record lets users reconcile an installed release with its development
+source, while keeping the standalone catalog easy to install.
+
+## Releases
 
 Validate the catalog before publishing:
 
