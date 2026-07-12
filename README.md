@@ -1,15 +1,50 @@
 # OpenPaper Skills
 
-An academic-research skill library for AI coding agents such as Codex and Claude Code.
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Agent Skills](https://img.shields.io/badge/agent%20skills-Codex%20%C2%B7%20Claude%20Code-blue.svg)](https://agentskills.io/specification)
 
-This repository deliberately separates two kinds of skills:
+OpenPaper Skills is the standalone, GitHub CLI-installable distribution of
+research skills developed in
+[AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS)'s
+`Research-skills-hub`. Use this repository when you want to add a focused
+research capability to an existing Codex or Claude Code project.
 
-- [`skills/`](skills/) contains original OpenPaper skills. It is the publishable, installable catalog.
-- [`collected-skills/`](collected-skills/) contains third-party skills collected for reference and evaluation. It is not part of the default installable catalog.
+> Need a complete, long-horizon research workspace rather than individual
+> skills? Explore [AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS)
+> for project templates, research memory, human context, a paper wiki, and
+> agent operating rules.
 
-## Original OpenPaper Skills
+## Choose Your Starting Point
 
-The directories in [`skills/`](skills/) follow the Agent Skills convention of `skills/<skill-name>/SKILL.md`, so GitHub CLI can discover and install them directly.
+| Your goal | Start here |
+| --- | --- |
+| Add a focused capability to an existing agent project | Install one or more skills from this repository. |
+| Plan research, run experiments, and prepare a paper | Start with [`research-bible`](skills/research-bible/) and [`task-file-builder`](skills/task-file-builder/). |
+| Maintain a long-lived paper knowledge base | Use [`paper-wiki-manager`](skills/paper-wiki-manager/). |
+| Build a complete, durable human-agent research environment | Use [AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS). |
+
+## Install Skills
+
+The installable catalog follows the Agent Skills convention of
+`skills/<skill-name>/SKILL.md`. GitHub CLI `v2.90.0` or later discovers these
+directories automatically.
+
+```bash
+# Inspect a skill before installation
+gh skill preview pengqianhan/openpaper research-bible
+
+# Install one skill for Codex at user scope
+gh skill install pengqianhan/openpaper research-bible --agent codex --scope user
+
+# Install every OpenPaper skill for Codex
+gh skill install pengqianhan/openpaper --all --agent codex --scope user
+```
+
+At project scope, Codex uses the shared `.agents/skills/` directory. See
+GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/) and the
+[Agent Skills specification](https://agentskills.io/specification).
+
+## Installable OpenPaper Catalog
 
 | Skill | Description |
 | --- | --- |
@@ -24,64 +59,39 @@ The directories in [`skills/`](skills/) follow the Agent Skills convention of `s
 | [`task-file-builder`](skills/task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [`uv-env`](skills/uv-env/) | Create and manage Python environments and dependencies with `uv`. |
 
-### Install original skills with GitHub CLI
+For catalog maintenance details, see [`skills/README.md`](skills/README.md).
 
-GitHub CLI `v2.90.0` or later can discover the repository's `skills/*/SKILL.md` directories.
+## Upstream and Releases
 
-```bash
-# Preview one skill before installation
-gh skill preview pengqianhan/openpaper research-bible
+The development source for these skills is
+[AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub).
+This repository is its standalone public distribution for direct skill
+installation. When syncing or publishing a public release, record the source
+hub commit in the release notes so users can trace the exact upstream version.
 
-# Install one skill for Codex at user scope
-gh skill install pengqianhan/openpaper research-bible --agent codex --scope user
-
-# Install every original OpenPaper skill for Codex
-gh skill install pengqianhan/openpaper --all --agent codex --scope user
-```
-
-At project scope, Codex uses the shared `.agents/skills/` directory. To validate the publishable catalog before a release, run:
+Validate the catalog before publishing:
 
 ```bash
 gh skill publish --dry-run
 ```
 
-See GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/) and the [Agent Skills specification](https://agentskills.io/specification).
+Tag releases so users can install a reproducible version:
 
-## Collected Skills
-
-[`collected-skills/`](collected-skills/) is a research and provenance archive. These third-party skills are intentionally kept outside `skills/`, so `gh skill install pengqianhan/openpaper --all` does not install them.
-
-| Skill | Description |
-| --- | --- |
-| [`alphaxiv-paper-lookup`](collected-skills/alphaxiv-paper-lookup/) | Look up arXiv papers through AlphaXiv's structured AI-generated overviews. |
-| [`arxiv2md`](collected-skills/arxiv2md/) | Convert arXiv papers to clean Markdown. |
-| [`deepxiv-baseline-table`](collected-skills/deepxiv-baseline-table/) | Build baseline-comparison tables from DeepXiv searches and paper sections. |
-| [`deepxiv-cli`](collected-skills/deepxiv-cli/) | Search and read academic papers through the DeepXiv CLI. |
-| [`deepxiv-trending-digest`](collected-skills/deepxiv-trending-digest/) | Produce concise digests of recent DeepXiv trending papers. |
-| [`drawio`](collected-skills/drawio/) | Generate draw.io diagrams and optionally export them to PNG, SVG, or PDF. |
-| [`explain-diff-html`](collected-skills/explain-diff-html/) | Produce rich HTML explanations of code changes, diffs, branches, and pull requests. |
-| [`hf-cli`](collected-skills/hf-cli/) | Work with models, datasets, repositories, and other Hugging Face Hub resources through `hf`. |
-| [`hugging-face-paper-pages`](collected-skills/hugging-face-paper-pages/) | Read Hugging Face paper pages and retrieve structured paper metadata. |
-| [`human-cognition-cache`](collected-skills/human-cognition-cache/) | Maintain a project-local, git-trackable cache of user context and knowledge state. |
-| [`ml-paper-writing`](collected-skills/ml-paper-writing/) | Write and prepare ML/AI papers for major research venues. |
-| [`paper-finder`](collected-skills/paper-finder/) | Find, organize, summarize, and cite ML/AI research papers. |
-| [`pyzotero`](collected-skills/pyzotero/) | Programmatically manage Zotero libraries using the pyzotero client. |
-
-Before using or redistributing a collected skill, inspect its `SKILL.md`, confirm its upstream source and license, and review any bundled scripts or network access.
-
-## Repository Structure
-
-```text
-.
-├── skills/                 # Original, gh-installable OpenPaper catalog
-│   └── <skill-name>/
-│       ├── SKILL.md
-│       ├── scripts/        # optional
-│       ├── references/     # optional
-│       └── assets/         # optional
-└── collected-skills/       # Third-party reference archive; not auto-installed
-    └── <skill-name>/
-        └── SKILL.md
+```bash
+gh skill install pengqianhan/openpaper research-bible --pin v0.1.0
 ```
 
-Each skill in `skills/` must have a `SKILL.md` file with YAML frontmatter. Its `name` field must match the containing directory name.
+## Collected Skills Archive
+
+[`collected-skills/`](collected-skills/) is a third-party provenance and
+evaluation archive. It is deliberately outside `skills/`, so
+`gh skill install pengqianhan/openpaper --all` does not install its contents.
+See [`collected-skills/README.md`](collected-skills/README.md) for the full
+catalog, upstream links, and intake rules.
+
+## License
+
+OpenPaper-owned code and documentation are licensed under the
+[MIT License](LICENSE). Each entry in `collected-skills/` retains its upstream
+license and attribution; the repository-level MIT license does not replace
+those third-party terms.

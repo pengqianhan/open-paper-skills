@@ -1,13 +1,18 @@
 # Collected Skills
 
-This directory is a provenance archive for third-party skills that OpenPaper
-collects, evaluates, or adapts. It is intentionally outside the repository's
-[`skills/`](../skills/) catalog: `gh skill install pengqianhan/openpaper --all`
-does not discover or install these entries.
+This directory is a provenance archive for third-party skills collected,
+evaluated, or adapted in
+[AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub).
+It is intentionally outside the repository's [`skills/`](../skills/) catalog:
+`gh skill install pengqianhan/openpaper --all` does not discover or install
+these entries.
 
 Before using or redistributing any collected skill, inspect its `SKILL.md`,
 confirm its upstream source and license, and review any bundled scripts or
 network access.
+
+The repository-level [MIT License](../LICENSE) covers OpenPaper-owned material
+only. It does not replace the attribution or license terms of collected skills.
 
 ## Catalog and Provenance
 
@@ -35,7 +40,7 @@ network access.
    them under `skills/` unless their provenance, license, and maintenance
    ownership have been resolved.
 4. Move a skill into [`../skills/`](../skills/) only when OpenPaper assumes
-   responsibility for maintaining and publishing it as an original skill.
+  responsibility for maintaining and publishing it as an installable skill.
 
 For the installable original catalog, see the repository root
 [README](../README.md) or [`../skills/README.md`](../skills/README.md).

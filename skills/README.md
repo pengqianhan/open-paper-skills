@@ -1,15 +1,18 @@
-# Original OpenPaper Skills
+# OpenPaper Installable Skills
 
-This directory is the canonical catalog of original, repo-maintained OpenPaper
-skills. Each directory follows the Agent Skills layout:
+This directory is the standalone, GitHub CLI-installable OpenPaper catalog. The
+skills are developed in
+[AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub)
+and distributed here for direct reuse. Each directory follows the Agent Skills
+layout:
 
 ```text
 skills/<skill-name>/SKILL.md
 ```
 
 That layout lets GitHub CLI discover these skills automatically. The repository
-root [README](../README.md) is the source of truth for the public catalog and
-installation guidance.
+root [README](../README.md) is the source of truth for public installation,
+release, licensing, and AI-Human Research OS guidance.
 
 ## Catalog
 
@@ -35,7 +38,7 @@ gh skill preview pengqianhan/openpaper research-bible
 # Install one skill for Codex
 gh skill install pengqianhan/openpaper research-bible --agent codex --scope user
 
-# Install every original OpenPaper skill
+# Install every OpenPaper skill
 gh skill install pengqianhan/openpaper --all --agent codex --scope user
 ```
 
@@ -48,7 +51,9 @@ gh skill publish --dry-run
 ## Maintenance Rules
 
 - Keep `name` in a skill's `SKILL.md` frontmatter identical to its directory name.
-- Keep original skills only in this directory. Third-party skills belong in
-  [`../collected-skills/`](../collected-skills/).
-- Include upstream attribution and license information for any external assets,
-  datasets, or reference material bundled with an original skill.
+- Keep only skills that OpenPaper maintains and publishes in this directory.
+  Third-party archival skills belong in [`../collected-skills/`](../collected-skills/).
+- Include attribution and license information for any external assets, datasets,
+  or reference material bundled with a skill.
+- When publishing a sync from Research-skills-hub, record the upstream commit
+  in the release notes.
