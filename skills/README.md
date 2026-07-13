@@ -18,6 +18,7 @@ release, licensing, and AI-Human Research OS guidance.
 
 | Skill | Description |
 | --- | --- |
+<!-- BEGIN GENERATED SKILLS CATALOG -->
 | [codex-paper-figure-skill](codex-paper-figure-skill/) | Create editable, publication-style academic figures from paper text or figure descriptions. |
 | [discover-academic-skills](discover-academic-skills/) | Discover and evaluate academic/research agent skills using strict quality and relevance gates. |
 | [drawio-paper](drawio-paper/) | Generate publication-quality academic diagrams and statistical plots. |
@@ -29,6 +30,7 @@ release, licensing, and AI-Human Research OS guidance.
 | [research-bible](research-bible/) | Turn ML/AI research principles into plans, experiment loops, logs, and debugging routines. |
 | [task-file-builder](task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [uv-env](uv-env/) | Create and manage Python environments and dependencies with `uv`. |
+<!-- END GENERATED SKILLS CATALOG -->
 
 ## Install with GitHub CLI
 

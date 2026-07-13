@@ -50,6 +50,7 @@ GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-ma
 
 | Skill | Description |
 | --- | --- |
+<!-- BEGIN GENERATED SKILLS CATALOG -->
 | [`codex-paper-figure-skill`](skills/codex-paper-figure-skill/) | Create editable, journal-style academic figures and diagrams from paper text or figure descriptions. |
 | [`discover-academic-skills`](skills/discover-academic-skills/) | Find and evaluate research-oriented agent skills with academic-relevance and quality gates. |
 | [`drawio-paper`](skills/drawio-paper/) | Generate publication-quality academic diagrams and statistical plots. |
@@ -61,6 +62,7 @@ GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-ma
 | [`research-bible`](skills/research-bible/) | Turn ML/AI research principles into research plans, experiment loops, logs, and debugging routines. |
 | [`task-file-builder`](skills/task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [`uv-env`](skills/uv-env/) | Create and manage Python environments and dependencies with `uv`. |
+<!-- END GENERATED SKILLS CATALOG -->
 
 For catalog maintenance details, see [`skills/README.md`](skills/README.md).
 
@@ -75,6 +77,57 @@ For catalog maintenance details, see [`skills/README.md`](skills/README.md).
 
 This record lets users reconcile an installed release with its development
 source, while keeping the standalone catalog easy to install.
+
+### Automatic upstream sync
+
+The [`sync-upstream-skills`](.github/workflows/sync-upstream-skills.yml)
+workflow mirrors skill directories from AI-Human Research OS every day and can
+also be run manually from the GitHub Actions page. It applies these mappings:
+
+| AI-Human Research OS source | This repository |
+| --- | --- |
+| `Research-skills-hub/open-paper-skills/<skill>/` | `skills/<skill>/` |
+| `Research-skills-hub/collected-skills/<skill>/` | `collected-skills/<skill>/` |
+
+Only child directories containing `SKILL.md` are mirrored. Repository-specific
+files such as the root README and each catalog's README/index are preserved.
+Paths listed in [`.syncignore`](.syncignore) are excluded. Successful changes
+are committed by GitHub Actions, and [`.upstream-revision`](.upstream-revision)
+records the exact source commit after the first synchronization.
+
+For immediate synchronization after an upstream change, add this workflow to
+`AI-Human-Research-OS/.github/workflows/notify-openpaper-sync.yml`:
+
+```yaml
+name: Notify OpenPaper skill sync
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Research-skills-hub/open-paper-skills/**"
+      - "Research-skills-hub/collected-skills/**"
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger OpenPaper sync
+        env:
+          GH_TOKEN: ${{ secrets.OPENPAPER_DISPATCH_TOKEN }}
+        run: |
+          gh api repos/pengqianhan/openpaper/dispatches \
+            --method POST \
+            -f event_type=research-skills-updated \
+            -f "client_payload[source_sha]=${GITHUB_SHA}"
+```
+
+Create `OPENPAPER_DISPATCH_TOKEN` as a fine-grained personal access token scoped
+only to `pengqianhan/openpaper`, with repository `Contents: read and write`, and
+save it as an Actions secret in AI-Human Research OS. In this repository, set
+**Settings → Actions → General → Workflow permissions** to **Read and write** so
+the receiving workflow can commit synchronized files. The daily and manual
+sync modes work without the cross-repository token.
 
 ## Releases
 

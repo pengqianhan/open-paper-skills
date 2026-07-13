@@ -18,6 +18,7 @@ only. It does not replace the attribution or license terms of collected skills.
 
 | Skill | Description | Upstream or provenance |
 | --- | --- | --- |
+<!-- BEGIN GENERATED SKILLS CATALOG -->
 | [alphaxiv-paper-lookup](alphaxiv-paper-lookup/) | Look up arXiv papers through AlphaXiv's structured AI-generated overviews. | Third-party community skill; [an exact public copy](https://mz-moonzoo.tistory.com/138) is not an official AlphaXiv release. Verify provenance before redistribution. |
 | [arxiv2md](arxiv2md/) | Convert arXiv papers to clean Markdown. | [timf34/arxiv2md](https://github.com/timf34/arxiv2md) (MIT) |
 | [deepxiv-baseline-table](deepxiv-baseline-table/) | Build baseline-comparison tables from DeepXiv searches and paper sections. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
@@ -25,11 +26,13 @@ only. It does not replace the attribution or license terms of collected skills.
 | [deepxiv-trending-digest](deepxiv-trending-digest/) | Produce concise digests of recent DeepXiv trending papers. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [drawio](drawio/) | Generate draw.io diagrams and optionally export them to PNG, SVG, or PDF. | [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) |
 | [explain-diff-html](explain-diff-html/) | Produce rich HTML explanations of code changes, diffs, branches, and pull requests. | [Geoffrey Litt's skill](https://gist.github.com/geoffreylitt/a29df1b5f9865506e8952488eac3d524) |
+| [grill-for-unknowns](grill-for-unknowns/) | Interrogate a plan against docs/source evidence, surface unknown unknowns, and avoid rushing into build mode. | [nicobailon/grill-for-unknowns](https://github.com/nicobailon/grill-for-unknowns), MIT |
 | [hf-cli](hf-cli/) | Work with models, datasets, repositories, and other Hugging Face Hub resources through `hf`. | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hf-cli/SKILL.md) |
 | [hugging-face-paper-pages](hugging-face-paper-pages/) | Read Hugging Face paper pages and retrieve structured paper metadata. | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md) |
 | [ml-paper-writing](ml-paper-writing/) | Write and prepare ML/AI papers for major research venues. | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) (MIT) |
 | [paper-finder](paper-finder/) | Find, organize, summarize, and cite ML/AI research papers. | Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main) |
 | [pyzotero](pyzotero/) | Programmatically manage Zotero libraries using the pyzotero client. | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) (MIT) |
+<!-- END GENERATED SKILLS CATALOG -->
 
 ## Intake Rules
 

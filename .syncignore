@@ -1,0 +1,4 @@
+# Paths are relative to the AI-Human-Research-OS repository root.
+# This skill manages installations inside AI-Human-Research-OS and is not part
+# of the standalone public catalog.
+Research-skills-hub/open-paper-skills/research-skill-installer

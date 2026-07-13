@@ -1,0 +1,70 @@
+name: Sync skills from AI-Human Research OS
+
+on:
+  repository_dispatch:
+    types: [research-skills-updated]
+  workflow_dispatch:
+    inputs:
+      source_revision:
+        description: AI-Human-Research-OS branch, tag, or commit SHA
+        required: false
+        default: main
+  schedule:
+    - cron: "23 3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-skills-from-ai-human-research-os
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      SOURCE_REVISION: ${{ github.event.client_payload.source_sha || inputs.source_revision || 'main' }}
+    steps:
+      - name: Check out OpenPaper Skills
+        uses: actions/checkout@v4
+
+      - name: Check out AI-Human Research OS
+        uses: actions/checkout@v4
+        with:
+          repository: pengqianhan/AI-Human-Research-OS
+          ref: ${{ env.SOURCE_REVISION }}
+          path: upstream
+          persist-credentials: false
+          sparse-checkout: |
+            Research-skills-hub/open-paper-skills
+            Research-skills-hub/collected-skills
+
+      - name: Resolve upstream commit
+        id: upstream
+        shell: bash
+        run: echo "sha=$(git -C upstream rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Synchronize skill directories
+        run: >-
+          python3 scripts/sync_from_research_os.py
+          --source upstream
+          --source-revision "${{ steps.upstream.outputs.sha }}"
+
+      - name: Verify synchronized mirror
+        run: python3 scripts/sync_from_research_os.py --source upstream --check
+
+      - name: Commit synchronized skills
+        shell: bash
+        env:
+          UPSTREAM_SHA: ${{ steps.upstream.outputs.sha }}
+        run: |
+          if git diff --quiet -- README.md skills collected-skills .upstream-revision; then
+            echo "No upstream skill changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md skills collected-skills .upstream-revision
+          git commit -m "chore: sync skills from AI-Human Research OS (${UPSTREAM_SHA:0:12})"
+          git push
