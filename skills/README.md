@@ -22,6 +22,7 @@ release, licensing, and AI-Human Research OS guidance.
 | [discover-academic-skills](discover-academic-skills/) | Discover and evaluate academic/research agent skills using strict quality and relevance gates. |
 | [drawio-paper](drawio-paper/) | Generate publication-quality academic diagrams and statistical plots. |
 | [explain-anything-html](explain-anything-html/) | Produce rich HTML explanations of papers, articles, documentation, and complex concepts. |
+| [human-cognition-cache](human-cognition-cache/) | Maintain a project-local, git-trackable cache of human context and knowledge state. |
 | [karpathy-coding-rules](karpathy-coding-rules/) | Apply focused coding rules and working conventions. |
 | [okf-repo-organizer](okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [paper-wiki-manager](paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, topics, concepts, and visualizations. |

@@ -27,7 +27,6 @@ only. It does not replace the attribution or license terms of collected skills.
 | [explain-diff-html](explain-diff-html/) | Produce rich HTML explanations of code changes, diffs, branches, and pull requests. | [Geoffrey Litt's skill](https://gist.github.com/geoffreylitt/a29df1b5f9865506e8952488eac3d524) |
 | [hf-cli](hf-cli/) | Work with models, datasets, repositories, and other Hugging Face Hub resources through `hf`. | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hf-cli/SKILL.md) |
 | [hugging-face-paper-pages](hugging-face-paper-pages/) | Read Hugging Face paper pages and retrieve structured paper metadata. | [huggingface/skills](https://github.com/huggingface/skills/blob/main/skills/hugging-face-paper-pages/SKILL.md) |
-| [human-cognition-cache](human-cognition-cache/) | Maintain a project-local, git-trackable cache of user context and knowledge state. | User-provided material; upstream ownership and license require verification. |
 | [ml-paper-writing](ml-paper-writing/) | Write and prepare ML/AI papers for major research venues. | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) (MIT) |
 | [paper-finder](paper-finder/) | Find, organize, summarize, and cite ML/AI research papers. | Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main) |
 | [pyzotero](pyzotero/) | Programmatically manage Zotero libraries using the pyzotero client. | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) (MIT) |

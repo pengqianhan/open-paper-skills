@@ -54,6 +54,7 @@ GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-ma
 | [`discover-academic-skills`](skills/discover-academic-skills/) | Find and evaluate research-oriented agent skills with academic-relevance and quality gates. |
 | [`drawio-paper`](skills/drawio-paper/) | Generate publication-quality academic diagrams and statistical plots. |
 | [`explain-anything-html`](skills/explain-anything-html/) | Produce rich HTML explanations of papers, articles, documentation, and complex concepts. |
+| [`human-cognition-cache`](skills/human-cognition-cache/) | Maintain a project-local, git-trackable cache of human context and knowledge state. |
 | [`karpathy-coding-rules`](skills/karpathy-coding-rules/) | Apply a focused set of coding rules and working conventions. |
 | [`okf-repo-organizer`](skills/okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [`paper-wiki-manager`](skills/paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, concepts, topics, and visualizations. |
