@@ -26,18 +26,23 @@ jobs:
       SOURCE_REVISION: ${{ github.event.client_payload.source_sha || inputs.source_revision || 'main' }}
     steps:
       - name: Check out OpenPaper Skills
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
-      - name: Check out AI-Human Research OS
-        uses: actions/checkout@v4
-        with:
-          repository: pengqianhan/AI-Human-Research-OS
-          ref: ${{ env.SOURCE_REVISION }}
-          path: upstream
-          persist-credentials: false
-          sparse-checkout: |
-            Research-skills-hub/open-paper-skills
+      - name: Fetch AI-Human Research OS skill directories
+        shell: bash
+        run: |
+          git init upstream
+          git -C upstream remote add origin https://github.com/pengqianhan/AI-Human-Research-OS.git
+          git -C upstream sparse-checkout init --cone
+          git -C upstream sparse-checkout set \
+            Research-skills-hub/open-paper-skills \
             Research-skills-hub/collected-skills
+          git -C upstream fetch \
+            --depth=1 \
+            --filter=blob:none \
+            --no-recurse-submodules \
+            origin "$SOURCE_REVISION"
+          git -C upstream checkout --detach FETCH_HEAD
 
       - name: Resolve upstream commit
         id: upstream
