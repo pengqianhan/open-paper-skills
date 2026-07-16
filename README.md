@@ -6,7 +6,7 @@
 OpenPaper Skills is the standalone, GitHub CLI-installable distribution of
 research skills developed in
 [AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS)'s
-`Research-skills-hub`. Use this repository when you want to add a focused
+`research-skills-hub`. Use this repository when you want to add a focused
 research capability to an existing Codex or Claude Code project.
 
 > Need a complete, long-horizon research workspace rather than individual
@@ -70,9 +70,9 @@ For catalog maintenance details, see [`skills/README.md`](skills/README.md).
 
 | Item | Policy |
 | --- | --- |
-| Development source | [AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub) |
+| Development source | [AI-Human Research OS / research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/research-skills-hub) |
 | Public distribution | This repository, which packages selected skills for direct `gh skill` installation. |
-| Sync record | Every sync or public release should record the full Research-skills-hub commit SHA in its commit message or release notes. |
+| Sync record | Every sync or public release should record the full research-skills-hub commit SHA in its commit message or release notes. |
 | Third-party content | Skills in [`collected-skills/`](collected-skills/) retain their upstream provenance and license; they are not republished as part of the installable catalog. |
 
 This record lets users reconcile an installed release with its development
@@ -86,8 +86,8 @@ also be run manually from the GitHub Actions page. It applies these mappings:
 
 | AI-Human Research OS source | This repository |
 | --- | --- |
-| `Research-skills-hub/open-paper-skills/<skill>/` | `skills/<skill>/` |
-| `Research-skills-hub/collected-skills/<skill>/` | `collected-skills/<skill>/` |
+| `research-skills-hub/open-paper-skills/<skill>/` | `skills/<skill>/` |
+| `research-skills-hub/collected-skills/<skill>/` | `collected-skills/<skill>/` |
 
 Only child directories containing `SKILL.md` are mirrored. Repository-specific
 files such as the root README and each catalog's README/index are preserved.
@@ -105,8 +105,8 @@ on:
   push:
     branches: [main]
     paths:
-      - "Research-skills-hub/open-paper-skills/**"
-      - "Research-skills-hub/collected-skills/**"
+      - "research-skills-hub/open-paper-skills/**"
+      - "research-skills-hub/collected-skills/**"
 
 jobs:
   notify:

@@ -16,8 +16,8 @@ from pathlib import Path
 
 SOURCE_REPOSITORY = "https://github.com/pengqianhan/AI-Human-Research-OS"
 MAPPINGS = (
-    ("Research-skills-hub/open-paper-skills", "skills"),
-    ("Research-skills-hub/collected-skills", "collected-skills"),
+    ("research-skills-hub/open-paper-skills", "skills"),
+    ("research-skills-hub/collected-skills", "collected-skills"),
 )
 NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 CATALOG_START = "<!-- BEGIN GENERATED SKILLS CATALOG -->"
@@ -223,8 +223,8 @@ def update_catalogs(
     source_skill_sets: dict[str, dict[str, Path]],
     check: bool,
 ) -> list[str]:
-    open_source = "Research-skills-hub/open-paper-skills"
-    collected_source = "Research-skills-hub/collected-skills"
+    open_source = "research-skills-hub/open-paper-skills"
+    collected_source = "research-skills-hub/collected-skills"
     open_skills = source_skill_sets[open_source]
     collected_skills = source_skill_sets[collected_source]
 

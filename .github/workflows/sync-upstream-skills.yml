@@ -35,8 +35,8 @@ jobs:
           git -C upstream remote add origin https://github.com/pengqianhan/AI-Human-Research-OS.git
           git -C upstream sparse-checkout init --cone
           git -C upstream sparse-checkout set \
-            Research-skills-hub/open-paper-skills \
-            Research-skills-hub/collected-skills
+            research-skills-hub/open-paper-skills \
+            research-skills-hub/collected-skills
           git -C upstream fetch \
             --depth=1 \
             --filter=blob:none \
