@@ -78,7 +78,7 @@ def parse_installs(num: str, suffix: str) -> int:
 def find_repo_root(start: Path | None = None) -> Path:
     start = Path(start or Path.cwd()).resolve()
     for candidate in (start, *start.parents):
-        if (candidate / "Research-skills-hub").is_dir():
+        if (candidate / "research-skills-hub").is_dir():
             return candidate
     sys.exit("error: run from inside the repo (Research-skills-hub not found)")
 
@@ -156,7 +156,7 @@ def classify_license(spdx) -> str:
 
 def hub_skill_names(repo_root: Path) -> set[str]:
     names = set()
-    for skill_md in (repo_root / "Research-skills-hub").rglob("SKILL.md"):
+    for skill_md in (repo_root / "research-skills-hub").rglob("SKILL.md"):
         names.add(skill_md.parent.name.lower())
     return names
 
@@ -196,7 +196,7 @@ def main() -> None:
     args = parser.parse_args()
 
     repo_root = Path(args.repo).resolve() if args.repo else find_repo_root()
-    ledger = repo_root / "Research-skills-hub" / "discovery-ledger.md"
+    ledger = repo_root / "research-skills-hub" / "discovery-ledger.md"
     seen = set() if args.include_seen else ledger_ids(ledger)
     hub_names = hub_skill_names(repo_root)
     have_gh = gh_available()
@@ -306,7 +306,7 @@ def main() -> None:
             "Agent: for each kept candidate apply the strict academic-relevance "
             "gate (IN/OUT scope in SKILL.md), then the rubric (35/25/25/15). "
             "Write the report, surface >=80 inline, and append every surfaced "
-            "candidate to Research-skills-hub/discovery-ledger.md."
+            "candidate to research-skills-hub/discovery-ledger.md."
         ),
     }
 

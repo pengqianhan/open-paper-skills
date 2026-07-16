@@ -40,7 +40,7 @@ Run the helper — it queries skills.sh, dedupes, suppresses ledger entries, and
 applies the deterministic gates:
 
 ```bash
-python Research-skills-hub/open-paper-skills/discover-academic-skills/scripts/discover.py
+python research-skills-hub/open-paper-skills/discover-academic-skills/scripts/discover.py
 ```
 
 Deterministic gates it applies (a failure drops the candidate into the report's

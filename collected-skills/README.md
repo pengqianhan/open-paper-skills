@@ -19,11 +19,14 @@ only. It does not replace the attribution or license terms of collected skills.
 | Skill | Description | Upstream or provenance |
 | --- | --- | --- |
 <!-- BEGIN GENERATED SKILLS CATALOG -->
+| [academic-rebuttal](academic-rebuttal/) | Triage reviews, prioritize rebuttal experiments, draft evidence-grounded responses, and plan resubmission when needed. | [TobiasLee/Rebuttal-Skill](https://github.com/TobiasLee/Rebuttal-Skill) |
 | [alphaxiv-paper-lookup](alphaxiv-paper-lookup/) | Look up arXiv papers through AlphaXiv's structured AI-generated overviews. | Third-party community skill; [an exact public copy](https://mz-moonzoo.tistory.com/138) is not an official AlphaXiv release. Verify provenance before redistribution. |
 | [arxiv2md](arxiv2md/) | Convert arXiv papers to clean Markdown. | [timf34/arxiv2md](https://github.com/timf34/arxiv2md) (MIT) |
+| [baseline-selector](baseline-selector/) | Select reproducible experimental baselines with GitHub evidence, compute-aware sets, and reviewer-risk checks. | [RyanZhou168/baseline-selector](https://github.com/RyanZhou168/baseline-selector/tree/main), MIT |
 | [deepxiv-baseline-table](deepxiv-baseline-table/) | Build baseline-comparison tables from DeepXiv searches and paper sections. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [deepxiv-cli](deepxiv-cli/) | Search and read academic papers through the DeepXiv CLI. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [deepxiv-trending-digest](deepxiv-trending-digest/) | Produce concise digests of recent DeepXiv trending papers. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
+| [deli-auto-research](deli-auto-research/) | Provide state, stall-detection, and watchdog protocols for long-horizon autonomous agent tasks. | [Deli AutoResearch framework](https://victorchen96.github.io/auto_research/framework.html#fullmd) |
 | [drawio](drawio/) | Generate draw.io diagrams and optionally export them to PNG, SVG, or PDF. | [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) |
 | [explain-diff-html](explain-diff-html/) | Produce rich HTML explanations of code changes, diffs, branches, and pull requests. | [Geoffrey Litt's skill](https://gist.github.com/geoffreylitt/a29df1b5f9865506e8952488eac3d524) |
 | [grill-for-unknowns](grill-for-unknowns/) | Interrogate a plan against docs/source evidence, surface unknown unknowns, and avoid rushing into build mode. | [nicobailon/grill-for-unknowns](https://github.com/nicobailon/grill-for-unknowns), MIT |
