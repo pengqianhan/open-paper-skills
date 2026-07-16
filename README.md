@@ -1,52 +1,75 @@
-# OpenPaper Skills
+<p align="center">
+  <img src="./assets/readme/hero.svg" width="100%" alt="OpenPaper Skills — modular research capabilities for AI coding agents">
+</p>
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Agent Skills](https://img.shields.io/badge/agent%20skills-Codex%20%C2%B7%20Claude%20Code-blue.svg)](https://agentskills.io/specification)
+<p align="center">
+  <a href="https://agentskills.io/specification"><img alt="Agent Skills specification" src="https://img.shields.io/badge/Agent_Skills-compatible-315E80?style=flat-square"></a>
+  <a href="https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/"><img alt="Install with GitHub CLI" src="https://img.shields.io/badge/GitHub_CLI-gh_skill-171A1D?style=flat-square&logo=github"></a>
+  <a href="./LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-D96C45?style=flat-square"></a>
+</p>
 
-OpenPaper Skills is the standalone, GitHub CLI-installable distribution of
-research skills developed in
-[AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS)'s
-`research-skills-hub`. Use this repository when you want to add a focused
-research capability to an existing Codex or Claude Code project.
+<p align="center">
+  <strong>Reusable research workflows for Codex, Claude Code, and other Agent Skills hosts.</strong><br>
+  Install one focused capability—or compose a complete path from research question to paper artifact.
+</p>
 
-> Need a complete, long-horizon research workspace rather than individual
-> skills? Explore [AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS)
-> for project templates, research memory, human context, a paper wiki, and
-> agent operating rules.
+OpenPaper Skills is the standalone distribution of research skills developed in
+[AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/research-skills-hub).
+Each skill packages instructions, references, scripts, and templates behind one
+`SKILL.md`, so an existing agent project can gain a research capability without
+adopting an entire workspace.
 
-![OpenPaper Skills visual overview: modular skills flow into an AI research agent, which produces a polished academic paper with figures, charts, and validated results.](assets/openpaper-skills-hero-v2.png)
+> [!TIP]
+> Need the complete long-horizon environment—project templates, research memory,
+> human context, paper wiki, and operating rules? Start with
+> [AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS).
 
-## Choose Your Starting Point
+## Start in 60 seconds
 
-| Your goal | Start here |
-| --- | --- |
-| Add a focused capability to an existing agent project | Install one or more skills from this repository. |
-| Plan research, run experiments, and prepare a paper | Start with [`research-bible`](skills/research-bible/) and [`task-file-builder`](skills/task-file-builder/). |
-| Maintain a long-lived paper knowledge base | Use [`paper-wiki-manager`](skills/paper-wiki-manager/). |
-| Build a complete, durable human-agent research environment | Use [AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS). |
-
-## Install Skills
-
-The installable catalog follows the Agent Skills convention of
-`skills/<skill-name>/SKILL.md`. GitHub CLI `v2.90.0` or later discovers these
-directories automatically.
+`gh skill` is available in GitHub CLI **v2.90.0 or later** and is currently in
+public preview. Preview a skill before installing it:
 
 ```bash
-# Inspect a skill before installation
 gh skill preview pengqianhan/openpaper research-bible
+```
 
-# Install one skill for Codex at user scope
+Then install one skill for Codex at user scope:
+
+```bash
 gh skill install pengqianhan/openpaper research-bible --agent codex --scope user
+```
 
-# Install every OpenPaper skill for Codex
+Or install the full maintained catalog:
+
+```bash
 gh skill install pengqianhan/openpaper --all --agent codex --scope user
 ```
 
-At project scope, Codex uses the shared `.agents/skills/` directory. See
-GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-manage-agent-skills-with-github-cli/) and the
-[Agent Skills specification](https://agentskills.io/specification).
+Replace `codex` with another supported host such as `claude-code` when needed.
+See GitHub's [`gh skill` guide](https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/customize-cloud-agent/add-skills)
+for install scopes, updates, and version pinning.
 
-## Installable OpenPaper Catalog
+## Pick a path through the catalog
+
+<p align="center">
+  <img src="./assets/readme/research-loop.svg" width="100%" alt="Five-stage OpenPaper research loop: frame, remember, run, explain, and publish">
+</p>
+
+You do not need the whole stack. A few useful starting combinations:
+
+| If you want to… | Start with… | Add when needed… |
+| --- | --- | --- |
+| Turn an idea into an executable research plan | [`research-bible`](skills/research-bible/) | [`task-file-builder`](skills/task-file-builder/) for clean session handoffs |
+| Keep papers, concepts, and project links connected | [`paper-wiki-manager`](skills/paper-wiki-manager/) | [`human-cognition-cache`](skills/human-cognition-cache/) for human context and knowledge state |
+| Produce publication-ready diagrams and plots | [`drawio-paper`](skills/drawio-paper/) | [`codex-paper-figure-skill`](skills/codex-paper-figure-skill/) for editable figure concepts |
+| Explain a paper or difficult concept interactively | [`explain-anything-html`](skills/explain-anything-html/) | [`discover-academic-skills`](skills/discover-academic-skills/) to locate adjacent capabilities |
+| Build a complete durable research workspace | [AI-Human Research OS](https://github.com/pengqianhan/AI-Human-Research-OS) | Use this repository only for selectively installed skills |
+
+## Maintained skills
+
+Everything under [`skills/`](skills/) is part of the installable OpenPaper
+catalog and is discovered by GitHub CLI through the
+`skills/<skill-name>/SKILL.md` convention.
 
 | Skill | Description |
 | --- | --- |
@@ -64,38 +87,44 @@ GitHub's [agent-skills announcement](https://github.blog/changelog/2026-04-16-ma
 | [`uv-env`](skills/uv-env/) | Create and manage Python environments and dependencies with `uv`. |
 <!-- END GENERATED SKILLS CATALOG -->
 
-For catalog maintenance details, see [`skills/README.md`](skills/README.md).
+Catalog maintenance notes live in [`skills/README.md`](skills/README.md).
 
-## Sync & Provenance
+## Two catalogs, one clear trust boundary
 
-| Item | Policy |
-| --- | --- |
-| Development source | [AI-Human Research OS / research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/research-skills-hub) |
-| Public distribution | This repository, which packages selected skills for direct `gh skill` installation. |
-| Sync record | Every sync or public release should record the full research-skills-hub commit SHA in its commit message or release notes. |
-| Third-party content | Skills in [`collected-skills/`](collected-skills/) retain their upstream provenance and license; they are not republished as part of the installable catalog. |
+| Directory | What it contains | Installed by `--all`? |
+| --- | --- | :---: |
+| [`skills/`](skills/) | OpenPaper-maintained, publishable skills | Yes |
+| [`collected-skills/`](collected-skills/) | Third-party skills retained for provenance, evaluation, or adaptation | No |
 
-This record lets users reconcile an installed release with its development
-source, while keeping the standalone catalog easy to install.
+Collected skills keep their upstream attribution and license terms. Before
+using one, inspect its `SKILL.md`, scripts, network access, source, and license.
+The repository-level MIT license does **not** replace third-party terms. See the
+[collected catalog and intake rules](collected-skills/README.md).
 
-### Automatic upstream sync
+## Distribution and provenance
+
+OpenPaper Skills has one development source and one installable distribution:
+
+```text
+AI-Human Research OS / research-skills-hub
+                    │
+                    │ daily, manual, or repository-dispatch sync
+                    ▼
+          pengqianhan/openpaper
+          ├── skills/             installable catalog
+          └── collected-skills/   provenance archive
+```
 
 The [`sync-upstream-skills`](.github/workflows/sync-upstream-skills.yml)
-workflow mirrors skill directories from AI-Human Research OS every day and can
-also be run manually from the GitHub Actions page. It applies these mappings:
+workflow mirrors child directories containing `SKILL.md`. Repository-specific
+README files are preserved, [`.syncignore`](.syncignore) exclusions are honored,
+and [`.upstream-revision`](.upstream-revision) records the exact source commit
+after synchronization.
 
-| AI-Human Research OS source | This repository |
-| --- | --- |
-| `research-skills-hub/open-paper-skills/<skill>/` | `skills/<skill>/` |
-| `research-skills-hub/collected-skills/<skill>/` | `collected-skills/<skill>/` |
+<details>
+<summary><strong>Maintainer setup: trigger an immediate cross-repository sync</strong></summary>
 
-Only child directories containing `SKILL.md` are mirrored. Repository-specific
-files such as the root README and each catalog's README/index are preserved.
-Paths listed in [`.syncignore`](.syncignore) are excluded. Successful changes
-are committed by GitHub Actions, and [`.upstream-revision`](.upstream-revision)
-records the exact source commit after the first synchronization.
-
-For immediate synchronization after an upstream change, add this workflow to
+Add the following workflow to
 `AI-Human-Research-OS/.github/workflows/notify-openpaper-sync.yml`:
 
 ```yaml
@@ -122,38 +151,43 @@ jobs:
             -f "client_payload[source_sha]=${GITHUB_SHA}"
 ```
 
-Create `OPENPAPER_DISPATCH_TOKEN` as a fine-grained personal access token scoped
-only to `pengqianhan/openpaper`, with repository `Contents: read and write`, and
-save it as an Actions secret in AI-Human Research OS. In this repository, set
-**Settings → Actions → General → Workflow permissions** to **Read and write** so
-the receiving workflow can commit synchronized files. The daily and manual
-sync modes work without the cross-repository token.
+Create `OPENPAPER_DISPATCH_TOKEN` as a fine-grained token scoped only to
+`pengqianhan/openpaper` with **Contents: read and write**, then save it as an
+Actions secret in AI-Human Research OS. In this repository, enable
+**Settings → Actions → General → Workflow permissions → Read and write**.
 
-## Releases
+</details>
 
-Validate the catalog before publishing:
+## Release a reproducible catalog
+
+Validate metadata and repository settings before publishing:
 
 ```bash
 gh skill publish --dry-run
 ```
 
-Tag releases so users can install a reproducible version:
+Tag releases, then pin installations when reproducibility matters:
 
 ```bash
 gh skill install pengqianhan/openpaper research-bible --pin v0.1.0
 ```
 
-## Collected Skills Archive
+Record the full `research-skills-hub` commit SHA in each sync commit or release
+note so an installed release can be reconciled with its development source.
 
-[`collected-skills/`](collected-skills/) is a third-party provenance and
-evaluation archive. It is deliberately outside `skills/`, so
-`gh skill install pengqianhan/openpaper --all` does not install its contents.
-See [`collected-skills/README.md`](collected-skills/README.md) for the full
-catalog, upstream links, and intake rules.
+## Repository map
+
+```text
+openpaper/
+├── skills/             # maintained skills published through gh skill
+├── collected-skills/   # third-party provenance and evaluation archive
+├── scripts/            # catalog synchronization tooling
+├── assets/readme/      # editable README visual system
+└── .github/workflows/  # automated upstream synchronization
+```
 
 ## License
 
 OpenPaper-owned code and documentation are licensed under the
-[MIT License](LICENSE). Each entry in `collected-skills/` retains its upstream
-license and attribution; the repository-level MIT license does not replace
-those third-party terms.
+[MIT License](LICENSE). Every entry in `collected-skills/` retains its upstream
+license and attribution.
