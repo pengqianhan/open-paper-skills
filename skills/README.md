@@ -25,11 +25,13 @@ release, licensing, and AI-Human Research OS guidance.
 | [explain-anything-html](explain-anything-html/) | Produce rich HTML explanations of papers, articles, documentation, and complex concepts. |
 | [human-cognition-cache](human-cognition-cache/) | Maintain a project-local, git-trackable cache of human context and knowledge state. |
 | [karpathy-coding-rules](karpathy-coding-rules/) | Apply focused coding rules and working conventions. |
+| [map-then-territory](map-then-territory/) | Draw a human-verifiable route map from start to destination, then drive agents through the territory edge by edge. |
 | [okf-repo-organizer](okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [paper-wiki-manager](paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, topics, concepts, and visualizations. |
 | [research-bible](research-bible/) | Turn ML/AI research principles into plans, experiment loops, logs, and debugging routines. |
 | [task-file-builder](task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [uv-env](uv-env/) | Create and manage Python environments and dependencies with `uv`. |
+| [writing-great-prompt](writing-great-prompt/) | Turn an intent into a lean, copy-ready prompt contract with destination, evidence, authority, and completion bar. |
 <!-- END GENERATED SKILLS CATALOG -->
 
 ## Install with GitHub CLI

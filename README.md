@@ -80,11 +80,13 @@ catalog and is discovered by GitHub CLI through the
 | [`explain-anything-html`](skills/explain-anything-html/) | Produce rich HTML explanations of papers, articles, documentation, and complex concepts. |
 | [`human-cognition-cache`](skills/human-cognition-cache/) | Maintain a project-local, git-trackable cache of human context and knowledge state. |
 | [`karpathy-coding-rules`](skills/karpathy-coding-rules/) | Apply a focused set of coding rules and working conventions. |
+| [`map-then-territory`](skills/map-then-territory/) | Draw a human-verifiable route map from start to destination, then drive agents through the territory edge by edge. |
 | [`okf-repo-organizer`](skills/okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [`paper-wiki-manager`](skills/paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, concepts, topics, and visualizations. |
 | [`research-bible`](skills/research-bible/) | Turn ML/AI research principles into research plans, experiment loops, logs, and debugging routines. |
 | [`task-file-builder`](skills/task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [`uv-env`](skills/uv-env/) | Create and manage Python environments and dependencies with `uv`. |
+| [`writing-great-prompt`](skills/writing-great-prompt/) | Turn an intent into a lean, copy-ready prompt contract with destination, evidence, authority, and completion bar. |
 <!-- END GENERATED SKILLS CATALOG -->
 
 Catalog maintenance notes live in [`skills/README.md`](skills/README.md).
