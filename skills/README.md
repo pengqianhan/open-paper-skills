@@ -23,6 +23,7 @@ release, licensing, and AI-Human Research OS guidance.
 | [discover-academic-skills](discover-academic-skills/) | Discover and evaluate academic/research agent skills using strict quality and relevance gates. |
 | [drawio-paper](drawio-paper/) | Generate publication-quality academic diagrams and statistical plots. |
 | [explain-anything-html](explain-anything-html/) | Produce rich HTML explanations of papers, articles, documentation, and complex concepts. |
+| [filetree-simple](filetree-simple/) | Generate and lint a compact top-level FILETREE.md navigation map from directory-owned entrypoints. |
 | [human-cognition-cache](human-cognition-cache/) | Maintain a project-local, git-trackable cache of human context and knowledge state. |
 | [karpathy-coding-rules](karpathy-coding-rules/) | Apply focused coding rules and working conventions. |
 | [map-then-territory](map-then-territory/) | Draw a human-verifiable route map from start to destination, then drive agents through the territory edge by edge. |

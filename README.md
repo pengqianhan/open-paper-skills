@@ -78,6 +78,7 @@ catalog and is discovered by GitHub CLI through the
 | [`discover-academic-skills`](skills/discover-academic-skills/) | Find and evaluate research-oriented agent skills with academic-relevance and quality gates. |
 | [`drawio-paper`](skills/drawio-paper/) | Generate publication-quality academic diagrams and statistical plots. |
 | [`explain-anything-html`](skills/explain-anything-html/) | Produce rich HTML explanations of papers, articles, documentation, and complex concepts. |
+| [`filetree-simple`](skills/filetree-simple/) | Generate and lint a compact top-level FILETREE.md navigation map from directory-owned entrypoints. |
 | [`human-cognition-cache`](skills/human-cognition-cache/) | Maintain a project-local, git-trackable cache of human context and knowledge state. |
 | [`karpathy-coding-rules`](skills/karpathy-coding-rules/) | Apply a focused set of coding rules and working conventions. |
 | [`map-then-territory`](skills/map-then-territory/) | Draw a human-verifiable route map from start to destination, then drive agents through the territory edge by edge. |
