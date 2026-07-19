@@ -85,6 +85,7 @@ catalog and is discovered by GitHub CLI through the
 | [`okf-repo-organizer`](skills/okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [`paper-wiki-manager`](skills/paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, concepts, topics, and visualizations. |
 | [`research-bible`](skills/research-bible/) | Turn ML/AI research principles into research plans, experiment loops, logs, and debugging routines. |
+| [`sell-research-honestly`](skills/sell-research-honestly/) | Audit evidence and turn research into persuasive, audience-specific value communication without overclaiming. |
 | [`task-file-builder`](skills/task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [`uv-env`](skills/uv-env/) | Create and manage Python environments and dependencies with `uv`. |
 | [`writing-great-prompt`](skills/writing-great-prompt/) | Turn an intent into a lean, copy-ready prompt contract with destination, evidence, authority, and completion bar. |

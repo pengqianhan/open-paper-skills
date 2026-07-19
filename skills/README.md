@@ -30,6 +30,7 @@ release, licensing, and AI-Human Research OS guidance.
 | [okf-repo-organizer](okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [paper-wiki-manager](paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, topics, concepts, and visualizations. |
 | [research-bible](research-bible/) | Turn ML/AI research principles into plans, experiment loops, logs, and debugging routines. |
+| [sell-research-honestly](sell-research-honestly/) | Audit evidence and turn research into persuasive, audience-specific value communication without overclaiming. |
 | [task-file-builder](task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [uv-env](uv-env/) | Create and manage Python environments and dependencies with `uv`. |
 | [writing-great-prompt](writing-great-prompt/) | Turn an intent into a lean, copy-ready prompt contract with destination, evidence, authority, and completion bar. |

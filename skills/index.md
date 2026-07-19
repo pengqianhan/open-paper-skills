@@ -15,6 +15,7 @@ Original or repo-maintained skills for Open Paper and this Research OS. See
 * [okf-repo-organizer](okf-repo-organizer/SKILL.md) - Organize repositories and knowledge corpora into Open Knowledge Format bundles.
 * [paper-wiki-manager](paper-wiki-manager/SKILL.md) - Maintains an OKF paper wiki with paper, topic, and concept pages, project links, graph visualization, and validation.
 * [research-bible](research-bible/SKILL.md) - Turns research-practice principles into concrete ML/AI research plans, loops, logs, and debugging habits.
+* [sell-research-honestly](sell-research-honestly/SKILL.md) - Audits evidence and turns research into persuasive, audience-specific value communication without overclaiming.
 * [task-file-builder](task-file-builder/SKILL.md) - Drafts context-rich `task.md` briefs for fresh Claude Code sessions.
 * [uv-env](uv-env/SKILL.md) - uv-based Python environment setup for research projects. Installed.
 * [writing-great-prompt](writing-great-prompt/SKILL.md) - Turns an intent into a lean, copy-ready prompt contract with destination, evidence, authority, and completion bar.
