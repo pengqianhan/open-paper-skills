@@ -26,7 +26,7 @@ only. It does not replace the attribution or license terms of collected skills.
 | [deepxiv-baseline-table](deepxiv-baseline-table/) | Build baseline-comparison tables from DeepXiv searches and paper sections. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [deepxiv-cli](deepxiv-cli/) | Search and read academic papers through the DeepXiv CLI. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
 | [deepxiv-trending-digest](deepxiv-trending-digest/) | Produce concise digests of recent DeepXiv trending papers. | Adapted from [DeepXiv/deepxiv_sdk](https://github.com/DeepXiv/deepxiv_sdk/tree/main) |
-| [deli-auto-research](deli-auto-research/) | Provide state, stall-detection, and watchdog protocols for long-horizon autonomous agent tasks. | [Deli AutoResearch framework](https://victorchen96.github.io/auto_research/framework.html#fullmd) |
+| [deli-autoresearch](deli-autoresearch/) | Provide state, stall-detection, and watchdog protocols for long-horizon autonomous agent tasks. | [Deli AutoResearch framework](https://victorchen96.github.io/auto_research/framework.html#fullmd) |
 | [drawio](drawio/) | Generate draw.io diagrams and optionally export them to PNG, SVG, or PDF. | [jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp) |
 | [explain-diff-html](explain-diff-html/) | Produce rich HTML explanations of code changes, diffs, branches, and pull requests. | [Geoffrey Litt's skill](https://gist.github.com/geoffreylitt/a29df1b5f9865506e8952488eac3d524) |
 | [explain-this](explain-this/) | Explain digital artifacts using learner profiles, comprehension quizzes, and spaced repetition. | [DannyMac180/skills](https://github.com/DannyMac180/skills/tree/main/explain-this), MIT |
