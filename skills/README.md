@@ -31,6 +31,8 @@ release, licensing, and AI-Human Research OS guidance.
 | [paper-wiki-manager](paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, topics, concepts, and visualizations. |
 | [research-bible](research-bible/) | Turn ML/AI research principles into plans, experiment loops, logs, and debugging routines. |
 | [sell-research-honestly](sell-research-honestly/) | Audit evidence and turn research into persuasive, audience-specific value communication without overclaiming. |
+| [session-handoff](session-handoff/) | Maintain or resume a repository-root `HANDOFF.md` that transfers a cross-session task arc to a cold session. |
+| [skill-organizer](skill-organizer/) | Register a newly added hub skill into its collection's `index.md` and `README.md`. |
 | [task-file-builder](task-file-builder/) | Draft context-rich `task.md` briefs for fresh agent sessions. |
 | [uv-env](uv-env/) | Create and manage Python environments and dependencies with `uv`. |
 | [writing-great-prompt](writing-great-prompt/) | Turn an intent into a lean, copy-ready prompt contract with destination, evidence, authority, and completion bar. |
