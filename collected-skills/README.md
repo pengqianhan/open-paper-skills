@@ -37,6 +37,7 @@ only. It does not replace the attribution or license terms of collected skills.
 | [ml-paper-writing](ml-paper-writing/) | Write and prepare ML/AI papers for major research venues. | [Orchestra-Research/AI-Research-SKILLs](https://github.com/Orchestra-Research/AI-Research-SKILLs) (MIT) |
 | [paper-finder](paper-finder/) | Find, organize, summarize, and cite ML/AI research papers. | Adapted from [bchao1/paper-finder](https://github.com/bchao1/paper-finder/tree/main) |
 | [pyzotero](pyzotero/) | Programmatically manage Zotero libraries using the pyzotero client. | [K-Dense-AI/claude-scientific-skills](https://github.com/K-Dense-AI/claude-scientific-skills) (MIT) |
+| [show-me](show-me/) | Explain the current topic visually with concise diagrams, code-shape sketches, and focused HTML artifacts. | [humanlayer/skills](https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md), MIT |
 | [skill-doctor](skill-doctor/) | Grade installed skills by scoring recent local agent conversations, then draft skill edits and a shareable report. | [warpdotdev/common-skills](https://github.com/warpdotdev/common-skills/blob/main/.agents/skills/skill-doctor/SKILL.md), MIT |
 <!-- END GENERATED SKILLS CATALOG -->
 

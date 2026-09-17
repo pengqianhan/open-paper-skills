@@ -24,6 +24,7 @@ skills.
 * [ml-paper-writing](ml-paper-writing/SKILL.md) - Writes publication-ready ML/AI papers with venue templates, citation checks, and writing guidance.
 * [paper-finder](paper-finder/SKILL.md) - Finds and organizes related ML/AI papers into persistent topic workspaces.
 * [pyzotero](pyzotero/SKILL.md) - Manages Zotero libraries programmatically with the pyzotero Python client.
+* [show-me](show-me/SKILL.md) - Explains the current topic visually with concise diagrams, code-shape sketches, and focused HTML artifacts.
 * [skill-doctor](skill-doctor/SKILL.md) - Grades agent skills from local conversation history and drafts concrete skill edits in one report.
 <!-- END GENERATED SKILLS CATALOG -->
 
