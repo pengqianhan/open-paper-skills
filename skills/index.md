@@ -16,6 +16,7 @@ Original or repo-maintained skills for Open Paper and this Research OS. See
 * [okf-repo-organizer](okf-repo-organizer/SKILL.md) - Organize repositories and knowledge corpora into Open Knowledge Format bundles.
 * [paper-wiki-manager](paper-wiki-manager/SKILL.md) - Maintains an OKF paper wiki with paper, topic, and concept pages, project links, graph visualization, and validation.
 * [research-bible](research-bible/SKILL.md) - Turns research-practice principles into concrete ML/AI research plans, loops, logs, and debugging habits.
+* [research-project-manager](research-project-manager/SKILL.md) - Creates, validates, updates, syncs, and archives Research Projects under `projects-folder/` against one template contract. Installed.
 * [sell-research-honestly](sell-research-honestly/SKILL.md) - Audits evidence and turns research into persuasive, audience-specific value communication without overclaiming.
 * [session-handoff](session-handoff/SKILL.md) - Maintains or resumes a repository-root HANDOFF.md that transfers a cross-session task arc to a cold session. Installed.
 * [skill-organizer](skill-organizer/SKILL.md) - Registers a newly added hub skill into its collection's index.md and README.md. Installed.

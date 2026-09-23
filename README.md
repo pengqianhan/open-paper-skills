@@ -86,6 +86,7 @@ catalog and is discovered by GitHub CLI through the
 | [`okf-repo-organizer`](skills/okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [`paper-wiki-manager`](skills/paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, concepts, topics, and visualizations. |
 | [`research-bible`](skills/research-bible/) | Turn ML/AI research principles into research plans, experiment loops, logs, and debugging routines. |
+| [`research-project-manager`](skills/research-project-manager/) | Create, validate, update, sync, and archive Research Projects under `projects-folder/` against one template contract. |
 | [`sell-research-honestly`](skills/sell-research-honestly/) | Audit evidence and turn research into persuasive, audience-specific value communication without overclaiming. |
 | [`session-handoff`](skills/session-handoff/) | Maintain or resume a repository-root `HANDOFF.md` that transfers a cross-session task arc to a cold session. |
 | [`skill-organizer`](skills/skill-organizer/) | Register a newly added hub skill into its collection's `index.md` and `README.md`. |
