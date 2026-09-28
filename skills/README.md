@@ -30,6 +30,7 @@ release, licensing, and AI-Human Research OS guidance.
 | [map-then-territory](map-then-territory/) | Draw a human-verifiable route map from start to destination, then drive agents through the territory edge by edge. |
 | [okf-repo-organizer](okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
 | [paper-wiki-manager](paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, topics, concepts, and visualizations. |
+| [project-dispatch](project-dispatch/) | Act as the root agent: brief, dispatch, track, and review project work run through `os-harness`. |
 | [research-bible](research-bible/) | Turn ML/AI research principles into plans, experiment loops, logs, and debugging routines. |
 | [research-project-manager](research-project-manager/) | Create, validate, update, sync, and archive Research Projects under `projects-folder/` against one template contract. |
 | [sell-research-honestly](sell-research-honestly/) | Audit evidence and turn research into persuasive, audience-specific value communication without overclaiming. |
