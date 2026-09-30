@@ -84,6 +84,7 @@ catalog and is discovered by GitHub CLI through the
 | [`karpathy-coding-rules`](skills/karpathy-coding-rules/) | Apply a focused set of coding rules and working conventions. |
 | [`map-then-territory`](skills/map-then-territory/) | Draw a human-verifiable route map from start to destination, then drive agents through the territory edge by edge. |
 | [`okf-repo-organizer`](skills/okf-repo-organizer/) | Organize repositories and knowledge corpora into Open Knowledge Format bundles. |
+| [`paper-search`](skills/paper-search/) | Search six literature sources in one command with one result shape, honouring the human's per-source on/off switches. |
 | [`paper-wiki-manager`](skills/paper-wiki-manager/) | Maintain a structured paper wiki, including paper notes, concepts, topics, and visualizations. |
 | [`project-dispatch`](skills/project-dispatch/) | Act as the root agent: brief, dispatch, track, and review project work run through `os-harness`. |
 | [`research-bible`](skills/research-bible/) | Turn ML/AI research principles into research plans, experiment loops, logs, and debugging routines. |

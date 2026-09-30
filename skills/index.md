@@ -14,6 +14,7 @@ Original or repo-maintained skills for Open Paper and this Research OS. See
 * [karpathy-coding-rules](karpathy-coding-rules/SKILL.md) - Applies a concise coding-discipline checklist before coding tasks: read first, plan narrowly, keep diffs small, verify behavior, and communicate clearly.
 * [map-then-territory](map-then-territory/SKILL.md) - Draws a human-verifiable route map from start to destination, then drives agents through the territory edge by edge.
 * [okf-repo-organizer](okf-repo-organizer/SKILL.md) - Organize repositories and knowledge corpora into Open Knowledge Format bundles.
+* [paper-search](paper-search/SKILL.md) - Searches alphaXiv, OpenAlex, bioRxiv, PubMed, Hugging Face, and Papers with Code in one command, honouring per-source switches.
 * [paper-wiki-manager](paper-wiki-manager/SKILL.md) - Maintains an OKF paper wiki with paper, topic, and concept pages, project links, graph visualization, and validation.
 * [project-dispatch](project-dispatch/SKILL.md) - Root-agent workflow that briefs, dispatches, tracks, and reviews project work through os-harness.
 * [research-bible](research-bible/SKILL.md) - Turns research-practice principles into concrete ML/AI research plans, loops, logs, and debugging habits.
