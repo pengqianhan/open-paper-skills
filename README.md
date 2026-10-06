@@ -30,19 +30,19 @@ adopting an entire workspace.
 public preview. Preview a skill before installing it:
 
 ```bash
-gh skill preview pengqianhan/openpaper research-bible
+gh skill preview pengqianhan/open-paper-skills research-bible
 ```
 
 Then install one skill for Codex at user scope:
 
 ```bash
-gh skill install pengqianhan/openpaper research-bible --agent codex --scope user
+gh skill install pengqianhan/open-paper-skills research-bible --agent codex --scope user
 ```
 
 Or install the full maintained catalog:
 
 ```bash
-gh skill install pengqianhan/openpaper --all --agent codex --scope user
+gh skill install pengqianhan/open-paper-skills --all --agent codex --scope user
 ```
 
 Replace `codex` with another supported host such as `claude-code` when needed.
@@ -120,7 +120,7 @@ AI-Human Research OS / research-skills-hub
                     │
                     │ daily, manual, or repository-dispatch sync
                     ▼
-          pengqianhan/openpaper
+          pengqianhan/open-paper-skills
           ├── skills/             installable catalog
           └── collected-skills/   provenance archive
 ```
@@ -155,14 +155,14 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.OPENPAPER_DISPATCH_TOKEN }}
         run: |
-          gh api repos/pengqianhan/openpaper/dispatches \
+          gh api repos/pengqianhan/open-paper-skills/dispatches \
             --method POST \
             -f event_type=research-skills-updated \
             -f "client_payload[source_sha]=${GITHUB_SHA}"
 ```
 
 Create `OPENPAPER_DISPATCH_TOKEN` as a fine-grained token scoped only to
-`pengqianhan/openpaper` with **Contents: read and write**, then save it as an
+`pengqianhan/open-paper-skills` with **Contents: read and write**, then save it as an
 Actions secret in AI-Human Research OS. In this repository, enable
 **Settings → Actions → General → Workflow permissions → Read and write**.
 
@@ -179,7 +179,7 @@ gh skill publish --dry-run
 Tag releases, then pin installations when reproducibility matters:
 
 ```bash
-gh skill install pengqianhan/openpaper research-bible --pin v0.1.0
+gh skill install pengqianhan/open-paper-skills research-bible --pin v0.1.0
 ```
 
 Record the full `research-skills-hub` commit SHA in each sync commit or release
@@ -188,7 +188,7 @@ note so an installed release can be reconciled with its development source.
 ## Repository map
 
 ```text
-openpaper/
+open-paper-skills/
 ├── skills/             # maintained skills published through gh skill
 ├── collected-skills/   # third-party provenance and evaluation archive
 ├── scripts/            # catalog synchronization tooling

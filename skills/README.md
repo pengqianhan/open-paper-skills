@@ -2,7 +2,7 @@
 
 This directory is the standalone, GitHub CLI-installable OpenPaper catalog. The
 skills are developed in
-[AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub)
+[AI-Human Research OS / research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/research-skills-hub)
 and distributed here for direct reuse. Each directory follows the Agent Skills
 layout:
 
@@ -46,13 +46,13 @@ release, licensing, and AI-Human Research OS guidance.
 
 ```bash
 # Inspect a skill before installation
-gh skill preview pengqianhan/openpaper research-bible
+gh skill preview pengqianhan/open-paper-skills research-bible
 
 # Install one skill for Codex
-gh skill install pengqianhan/openpaper research-bible --agent codex --scope user
+gh skill install pengqianhan/open-paper-skills research-bible --agent codex --scope user
 
 # Install every OpenPaper skill
-gh skill install pengqianhan/openpaper --all --agent codex --scope user
+gh skill install pengqianhan/open-paper-skills --all --agent codex --scope user
 ```
 
 Before publishing a release, validate this catalog:
@@ -68,5 +68,5 @@ gh skill publish --dry-run
   Third-party archival skills belong in [`../collected-skills/`](../collected-skills/).
 - Include attribution and license information for any external assets, datasets,
   or reference material bundled with a skill.
-- When publishing a sync from Research-skills-hub, record the upstream commit
+- When publishing a sync from research-skills-hub, record the upstream commit
   in the release notes.

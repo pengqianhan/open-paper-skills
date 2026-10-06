@@ -2,9 +2,9 @@
 
 This directory is a provenance archive for third-party skills collected,
 evaluated, or adapted in
-[AI-Human Research OS / Research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/Research-skills-hub).
+[AI-Human Research OS / research-skills-hub](https://github.com/pengqianhan/AI-Human-Research-OS/tree/main/research-skills-hub).
 It is intentionally outside the repository's [`skills/`](../skills/) catalog:
-`gh skill install pengqianhan/openpaper --all` does not discover or install
+`gh skill install pengqianhan/open-paper-skills --all` does not discover or install
 these entries.
 
 Before using or redistributing any collected skill, inspect its `SKILL.md`,
